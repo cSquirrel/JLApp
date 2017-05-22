@@ -14,6 +14,8 @@
 		329439DC1ED3498100FB5C2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329439DA1ED3498100FB5C2A /* LaunchScreen.storyboard */; };
 		329439E71ED3498100FB5C2A /* DishwashersAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329439E61ED3498100FB5C2A /* DishwashersAppTests.swift */; };
 		329439F21ED3498100FB5C2A /* DishwashersAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329439F11ED3498100FB5C2A /* DishwashersAppUITests.swift */; };
+		32943A021ED34AA600FB5C2A /* JohnLewisAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */; };
+		32943A041ED34AB800FB5C2A /* JohnLewisAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		329439ED1ED3498100FB5C2A /* DishwashersAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishwashersAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		329439F11ED3498100FB5C2A /* DishwashersAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwashersAppUITests.swift; sourceTree = "<group>"; };
 		329439F31ED3498100FB5C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisAPI.swift; sourceTree = "<group>"; };
+		32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisAPITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		329439D01ED3498100FB5C2A /* DishwashersApp */ = {
 			isa = PBXGroup;
 			children = (
+				329439FF1ED34A5C00FB5C2A /* API */,
 				329439D11ED3498100FB5C2A /* AppDelegate.swift */,
 				329439D31ED3498100FB5C2A /* ViewController.swift */,
 				329439D51ED3498100FB5C2A /* Main.storyboard */,
@@ -110,6 +115,7 @@
 		329439E51ED3498100FB5C2A /* DishwashersAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				32943A001ED34A6C00FB5C2A /* API */,
 				329439E61ED3498100FB5C2A /* DishwashersAppTests.swift */,
 				329439E81ED3498100FB5C2A /* Info.plist */,
 			);
@@ -123,6 +129,22 @@
 				329439F31ED3498100FB5C2A /* Info.plist */,
 			);
 			path = DishwashersAppUITests;
+			sourceTree = "<group>";
+		};
+		329439FF1ED34A5C00FB5C2A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		32943A001ED34A6C00FB5C2A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +286,7 @@
 			files = (
 				329439D41ED3498100FB5C2A /* ViewController.swift in Sources */,
 				329439D21ED3498100FB5C2A /* AppDelegate.swift in Sources */,
+				32943A021ED34AA600FB5C2A /* JohnLewisAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32943A041ED34AB800FB5C2A /* JohnLewisAPITests.swift in Sources */,
 				329439E71ED3498100FB5C2A /* DishwashersAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +540,7 @@
 				329439F81ED3498100FB5C2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		329439F91ED3498100FB5C2A /* Build configuration list for PBXNativeTarget "DishwashersAppTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +549,7 @@
 				329439FB1ED3498100FB5C2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		329439FC1ED3498100FB5C2A /* Build configuration list for PBXNativeTarget "DishwashersAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +558,7 @@
 				329439FE1ED3498100FB5C2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
