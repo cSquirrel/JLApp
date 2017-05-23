@@ -1,0 +1,29 @@
+{
+    "productId": "ProductId",
+    "title": "Product Title",
+    "price": {
+        "now": "549.00",
+    },
+    "code": "ProductCode",
+    "displaySpecialOffer": "Extra 3 years guarantee",
+    "additionalServices": {
+        "includedServices": ["2 year guarantee included"]
+    },
+    "media": {
+        "images": {
+            "urls": ["http://test.server/image1.png", "http://test.server/image2.png"]
+        }
+    },
+    "details": {
+        "productInformation": "Product Information"
+    },
+    "features": [{
+                 "attributes": [{
+                                "name": "Dimensions",
+                                "value": "H84.5 x W60 x D60cm"
+                                }, {
+                                "name": "Number of Programs",
+                                "value": "6"
+                                }]
+                 }]
+}

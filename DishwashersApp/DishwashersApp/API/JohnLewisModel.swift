@@ -25,7 +25,43 @@ public struct JohnLewisProduct {
 }
 
 public struct JohnLewisProductDetails {
+ 
+    // The title of the product
+    let title: String
     
+    // The image urls returned here should be used on the product page.
+    let imageURLs: [URL]
+    
+    // The now price is the price of the product, and should be assumed this price is in £
+    // Price -> Now
+    let price: String
+    
+    // Text to display in the product information
+    //Details -> productInformation
+    let productInformation: String
+    
+    // When data is present here, this is shown on the product page under the price
+    let displaySpecialOffer: String
+    
+    // Guarantee information
+    //additionalServices -> includedServices
+    let includedServices: [String]
+    
+    // Product Code
+    let code: String
+    
+    // Product Specification Name
+    // Features[0] -> Attributes -> name
+    // Value for the product specification
+    // Features[0] -> Attributes ->value
+    
+    public struct Feature {
+        let name: String
+        let value: String
+    }
+    
+    let features:[Feature]
+
 }
 
 // MARK: - Create from JSON
@@ -99,5 +135,69 @@ extension JohnLewisProduct {
         
         return products
     }
+    
+}
+
+extension JohnLewisProductDetails {
+    
+    enum JsonKey {
+        static let title = "title"
+        static let media = "media"
+        static let image = "images"
+        static let urls = "urls"
+        static let price = "price"
+        static let priceNow = "now"
+        static let details = "details"
+        static let productInformation = "productInformation"
+        static let displaySpecialOffer = "displaySpecialOffer"
+        static let additionalServices = "additionalServices"
+        static let includedServices = "includedServices"
+        static let code = "code"
+        static let features = "features"
+        static let attributes = "attributes"
+        static let name = "name"
+        static let value = "value"
+    }
+    
+    public static func createProduct(fromJson json: [String:Any]) -> JohnLewisProductDetails? {
+        
+//        guard let productId = json[JsonKey.productId] as? String,
+//            let priceData = json[JsonKey.price] as? [String:Any],
+//            let price = priceData[JsonKey.priceNow] as? String,
+//            let title = json[JsonKey.title] as? String,
+//            let imageURLString = json[JsonKey.imageURL] as? String,
+//            let imageURL = URL(string: imageURLString) else {
+//                return nil
+//        }
+        
+        let result = JohnLewisProductDetails(title: "",
+                                             imageURLs: [],
+                                             price: "",
+                                             productInformation: "",
+                                             displaySpecialOffer: "",
+                                             includedServices: [""],
+                                             code: "",
+                                             features: [])
+        return result
+    }
+    
+    public static func parse(productsAsJsonData jsonData: Data) -> JohnLewisProductDetails? {
+        
+        guard
+            let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: []),
+            let productsAsJsonObject = jsonObject as? [String:Any] else {
+                return nil
+        }
+        
+        guard let products = createProduct(fromJson: productsAsJsonObject) else {
+            return nil
+        }
+        
+        return products
+    }
+    
+}
+
+extension JohnLewisProductDetails.Feature {
     
 }
