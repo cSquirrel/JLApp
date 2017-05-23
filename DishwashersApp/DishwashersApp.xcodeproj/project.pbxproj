@@ -26,6 +26,7 @@
 		32943A191ED4434800FB5C2A /* two_simple_products.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A181ED4434800FB5C2A /* two_simple_products.json */; };
 		32943A1B1ED4487C00FB5C2A /* products_from_server.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A1A1ED4487C00FB5C2A /* products_from_server.json */; };
 		32943A1E1ED4571B00FB5C2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A1D1ED4571B00FB5C2A /* ViewController.swift */; };
+		329D9ECB1ED4610A00020D0E /* ApplicationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D9ECA1ED4610A00020D0E /* ApplicationConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		32943A181ED4434800FB5C2A /* two_simple_products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = two_simple_products.json; sourceTree = "<group>"; };
 		32943A1A1ED4487C00FB5C2A /* products_from_server.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products_from_server.json; sourceTree = "<group>"; };
 		32943A1D1ED4571B00FB5C2A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		329D9ECA1ED4610A00020D0E /* ApplicationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				32943A051ED4070300FB5C2A /* Networking */,
 				329439FF1ED34A5C00FB5C2A /* API */,
 				329439D11ED3498100FB5C2A /* AppDelegate.swift */,
+				329D9ECA1ED4610A00020D0E /* ApplicationConfiguration.swift */,
 				329439D81ED3498100FB5C2A /* Assets.xcassets */,
 				329439DA1ED3498100FB5C2A /* LaunchScreen.storyboard */,
 				329439DD1ED3498100FB5C2A /* Info.plist */,
@@ -348,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329D9ECB1ED4610A00020D0E /* ApplicationConfiguration.swift in Sources */,
 				32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */,
 				32943A071ED4073400FB5C2A /* NetworkServicesProvider.swift in Sources */,
 				329439D21ED3498100FB5C2A /* AppDelegate.swift in Sources */,
