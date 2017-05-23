@@ -25,14 +25,58 @@ public struct JohnLewisProduct {
 }
 
 // MARK: - Create from JSON
+
+/**
+ * NOTE:
+ *
+ * Since the model is defined by the API I don't see a problem with 
+ * parsing JSON to model object here. 
+ * Would the model be internal to the app I would extract the following 
+ * extension to JohnLewisProductBuilder then
+ * to keep the model JSON agnostic.
+ */
 extension JohnLewisProduct {
     
-    public static func createProducts(fromJson: Array<Any?>) -> [JohnLewisProduct]? {
-        return nil
+    enum JsonKey {
+        static let productId = "productId"
+        static let price = "price"
+        static let priceNow = "now"
+        static let title = "title"
+        static let imageURL = "imageURL"
     }
     
-    public static func createProduct(fromJson: Dictionary<String, Any?>) -> JohnLewisProduct? {
-        return nil
+    public static func createProduct(fromJson json: [String:Any?]) -> JohnLewisProduct? {
+        
+        guard let productId = json[JsonKey.productId] as? String,
+            let priceData = json[JsonKey.price] as? [String:Any?],
+            let price = priceData[JsonKey.priceNow] as? String,
+            let title = json[JsonKey.title] as? String,
+            let imageURLString = json[JsonKey.imageURL] as? String,
+            let imageURL = URL(string: imageURLString) else {
+                return nil
+        }
+        
+        let result = JohnLewisProduct(productId: productId,
+                                      price: price,
+                                      title: title,
+                                      imageURL: imageURL)
+        return result
+    }
+
+    public static func createProducts(fromJson: Array<Any?>) -> [JohnLewisProduct]? {
+        
+        let result: [JohnLewisProduct]
+        
+        result = fromJson.flatMap({ (jsonElement: Any?) -> JohnLewisProduct? in
+            
+            guard let jsonDict = jsonElement as? [String:Any?] else {
+                return nil
+            }
+            let product = createProduct(fromJson: jsonDict)
+            return product
+        })
+        
+        return result
     }
     
 }
