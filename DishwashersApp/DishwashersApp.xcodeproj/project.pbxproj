@@ -14,6 +14,18 @@
 		329439DC1ED3498100FB5C2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329439DA1ED3498100FB5C2A /* LaunchScreen.storyboard */; };
 		329439E71ED3498100FB5C2A /* DishwashersAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329439E61ED3498100FB5C2A /* DishwashersAppTests.swift */; };
 		329439F21ED3498100FB5C2A /* DishwashersAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329439F11ED3498100FB5C2A /* DishwashersAppUITests.swift */; };
+		32943A021ED34AA600FB5C2A /* JohnLewisAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */; };
+		32943A041ED34AB800FB5C2A /* JohnLewisAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */; };
+		32943A071ED4073400FB5C2A /* NetworkServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A061ED4073400FB5C2A /* NetworkServicesProvider.swift */; };
+		32943A091ED4081C00FB5C2A /* JSONServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A081ED4081C00FB5C2A /* JSONServicesProvider.swift */; };
+		32943A0B1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0A1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift */; };
+		32943A0E1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */; };
+		32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */; };
+		32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A111ED4208700FB5C2A /* JohnLewisModel.swift */; };
+		32943A141ED4220900FB5C2A /* JohnLewisProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */; };
+		32943A161ED42CE400FB5C2A /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A151ED42CE400FB5C2A /* TestUtils.swift */; };
+		32943A191ED4434800FB5C2A /* two_simple_products.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A181ED4434800FB5C2A /* two_simple_products.json */; };
+		32943A1B1ED4487C00FB5C2A /* products_from_server.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A1A1ED4487C00FB5C2A /* products_from_server.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +59,18 @@
 		329439ED1ED3498100FB5C2A /* DishwashersAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishwashersAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		329439F11ED3498100FB5C2A /* DishwashersAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwashersAppUITests.swift; sourceTree = "<group>"; };
 		329439F31ED3498100FB5C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisAPI.swift; sourceTree = "<group>"; };
+		32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisAPITests.swift; sourceTree = "<group>"; };
+		32943A061ED4073400FB5C2A /* NetworkServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServicesProvider.swift; sourceTree = "<group>"; };
+		32943A081ED4081C00FB5C2A /* JSONServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONServicesProvider.swift; sourceTree = "<group>"; };
+		32943A0A1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperationsExecutor.swift; sourceTree = "<group>"; };
+		32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkServicesProvider.swift; sourceTree = "<group>"; };
+		32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkOperationsExecutor.swift; sourceTree = "<group>"; };
+		32943A111ED4208700FB5C2A /* JohnLewisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisModel.swift; sourceTree = "<group>"; };
+		32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisProductTests.swift; sourceTree = "<group>"; };
+		32943A151ED42CE400FB5C2A /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		32943A181ED4434800FB5C2A /* two_simple_products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = two_simple_products.json; sourceTree = "<group>"; };
+		32943A1A1ED4487C00FB5C2A /* products_from_server.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products_from_server.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +121,8 @@
 		329439D01ED3498100FB5C2A /* DishwashersApp */ = {
 			isa = PBXGroup;
 			children = (
+				32943A051ED4070300FB5C2A /* Networking */,
+				329439FF1ED34A5C00FB5C2A /* API */,
 				329439D11ED3498100FB5C2A /* AppDelegate.swift */,
 				329439D31ED3498100FB5C2A /* ViewController.swift */,
 				329439D51ED3498100FB5C2A /* Main.storyboard */,
@@ -110,8 +136,12 @@
 		329439E51ED3498100FB5C2A /* DishwashersAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				32943A171ED4433D00FB5C2A /* TestData */,
+				32943A0C1ED40B2000FB5C2A /* Mock */,
+				32943A001ED34A6C00FB5C2A /* API */,
 				329439E61ED3498100FB5C2A /* DishwashersAppTests.swift */,
 				329439E81ED3498100FB5C2A /* Info.plist */,
+				32943A151ED42CE400FB5C2A /* TestUtils.swift */,
 			);
 			path = DishwashersAppTests;
 			sourceTree = "<group>";
@@ -123,6 +153,52 @@
 				329439F31ED3498100FB5C2A /* Info.plist */,
 			);
 			path = DishwashersAppUITests;
+			sourceTree = "<group>";
+		};
+		329439FF1ED34A5C00FB5C2A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */,
+				32943A111ED4208700FB5C2A /* JohnLewisModel.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		32943A001ED34A6C00FB5C2A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */,
+				32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		32943A051ED4070300FB5C2A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				32943A061ED4073400FB5C2A /* NetworkServicesProvider.swift */,
+				32943A0A1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift */,
+				32943A081ED4081C00FB5C2A /* JSONServicesProvider.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		32943A0C1ED40B2000FB5C2A /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */,
+				32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		32943A171ED4433D00FB5C2A /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				32943A181ED4434800FB5C2A /* two_simple_products.json */,
+				32943A1A1ED4487C00FB5C2A /* products_from_server.json */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +321,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32943A1B1ED4487C00FB5C2A /* products_from_server.json in Resources */,
+				32943A191ED4434800FB5C2A /* two_simple_products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +340,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */,
 				329439D41ED3498100FB5C2A /* ViewController.swift in Sources */,
+				32943A071ED4073400FB5C2A /* NetworkServicesProvider.swift in Sources */,
 				329439D21ED3498100FB5C2A /* AppDelegate.swift in Sources */,
+				32943A0B1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift in Sources */,
+				32943A021ED34AA600FB5C2A /* JohnLewisAPI.swift in Sources */,
+				32943A091ED4081C00FB5C2A /* JSONServicesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +354,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32943A0E1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift in Sources */,
+				32943A161ED42CE400FB5C2A /* TestUtils.swift in Sources */,
+				32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */,
+				32943A041ED34AB800FB5C2A /* JohnLewisAPITests.swift in Sources */,
+				32943A141ED4220900FB5C2A /* JohnLewisProductTests.swift in Sources */,
 				329439E71ED3498100FB5C2A /* DishwashersAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +604,7 @@
 				329439F81ED3498100FB5C2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		329439F91ED3498100FB5C2A /* Build configuration list for PBXNativeTarget "DishwashersAppTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +613,7 @@
 				329439FB1ED3498100FB5C2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		329439FC1ED3498100FB5C2A /* Build configuration list for PBXNativeTarget "DishwashersAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +622,7 @@
 				329439FE1ED3498100FB5C2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

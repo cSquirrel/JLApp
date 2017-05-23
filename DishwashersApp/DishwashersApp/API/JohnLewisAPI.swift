@@ -1,0 +1,57 @@
+//
+//  JohnLewisAPI.swift
+//  DishwashersApp
+//
+//  Created by Marcin Maciukiewicz on 22/05/2017.
+//  Copyright © 2017 Blue Pocket Limited. All rights reserved.
+//
+
+import UIKit
+
+struct JohnLewisAPIConfig {
+    
+    let networkProvider: NetworkServicesProvider
+    let networkExecutor: NetworkOperationsExecutor
+    let baseURL: URL
+    let apiKey: String
+    
+    public func createEndpointURL(servicePath: String) -> URL {
+        
+        var result = URL(string:baseURL.absoluteString)!
+        result.appendPathComponent(servicePath)
+        return result
+    }
+    
+}
+
+public class JohnLewisAPI: NSObject {
+
+    private let config: JohnLewisAPIConfig
+    
+    init(_ c: JohnLewisAPIConfig) {
+        
+        config = c
+        
+    }
+    
+    public typealias GetProductsGridResult = (_ products: [JohnLewisProduct]) -> ()
+    public func getProductsGrid(query:String, result: @escaping GetProductsGridResult) {
+        
+        let result = { (status: NetworkOperationStatus) in
+            
+            switch status {
+            case .successful(let data):
+                let products = JohnLewisProduct.parse(productsAsJsonData: data)
+                result(products)
+            case.failed:
+                return
+            }
+        }
+        
+        let endpointURL = config.createEndpointURL(servicePath: "products/search")
+        let getProductsOp = config.networkProvider.createGETOperation(url: endpointURL, result: result)
+        config.networkExecutor.execute(operation: getProductsOp)
+        
+    }
+
+}
