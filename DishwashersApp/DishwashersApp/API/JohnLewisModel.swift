@@ -43,7 +43,7 @@ extension JohnLewisProduct {
         static let price = "price"
         static let priceNow = "now"
         static let title = "title"
-        static let imageURL = "imageURL"
+        static let imageURL = "image"
     }
     
     public static func createProduct(fromJson json: [String:Any?]) -> JohnLewisProduct? {

@@ -6,7 +6,7 @@
                     "price": {
                         "now": "9.99 product_id_1"
                     },
-                    "imageURL": "http://test.server.com/image_product_id_1.png"
+                    "image": "http://test.server.com/image_product_id_1.png"
                  },
                  {
                  "productId": "product_id_2",
@@ -14,7 +14,7 @@
                  "price": {
                  "now": "9.99 product_id_2"
                  },
-                 "imageURL": "http://test.server.com/image_product_id_2.png"
+                 "image": "http://test.server.com/image_product_id_2.png"
                  }
               ]
 }

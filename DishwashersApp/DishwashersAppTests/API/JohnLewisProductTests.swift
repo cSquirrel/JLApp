@@ -18,7 +18,7 @@ class JohnLewisProductTests: XCTestCase {
                                         "now": "9.99 \(productId)"
                                     ],
                                     "title": "Product \(productId)",
-                                    "imageURL": "http://test.server.com/image_\(productId).png"]
+                                    "image": "http://test.server.com/image_\(productId).png"]
         return result
         
     }
