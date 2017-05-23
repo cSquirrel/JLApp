@@ -103,12 +103,31 @@
                     <navigationItem key="navigationItem" title="Dishwashers" id="eTg-eU-Apm"/>
                     <connections>
                         <outlet property="appConfiguration" destination="CvP-S7-WBQ" id="Srk-PU-Tq2"/>
+                        <segue destination="JE3-Mj-amt" kind="show" identifier="presentProductDetails" id="0of-ZP-Djj"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEO-l7-oEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="CvP-S7-WBQ" customClass="ApplicationConfiguration" customModule="DishwashersApp" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="-38.0859375" y="544.53125"/>
+            <point key="canvasLocation" x="-26" y="545"/>
+        </scene>
+        <!--Product Details View Controller-->
+        <scene sceneID="ZWO-Qr-7of">
+            <objects>
+                <viewController id="JE3-Mj-amt" customClass="ProductDetailsViewController" customModule="DishwashersApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mlw-08-oLP"/>
+                        <viewControllerLayoutGuide type="bottom" id="rZn-Nd-chu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QWu-Rg-UQy">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XLP-Bj-cMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="545"/>
         </scene>
     </scenes>
     <resources>
