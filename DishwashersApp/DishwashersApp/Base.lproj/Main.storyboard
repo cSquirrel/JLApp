@@ -1,30 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RWR-Zm-hSC">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="smd-9x-90q">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DishwashersApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController id="RWR-Zm-hSC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YwF-oL-YcH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="r28-kJ-GgG" kind="relationship" relationship="rootViewController" id="ULN-0e-emf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fif-DT-uk3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-897" y="545"/>
+        </scene>
+        <!--Dishwashers-->
+        <scene sceneID="8IN-s0-7bn">
+            <objects>
+                <collectionViewController title="Dishwashers" id="r28-kJ-GgG" customClass="ProductsGridViewController" customModule="DishwashersApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="TyE-Ls-yj4">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="40x-iu-lM4">
+                            <size key="itemSize" width="244" height="328"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="WlU-wT-0an" customClass="ProductCell" customModule="DishwashersApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="244" height="328"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="244" height="328"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="vXs-5r-YuH">
+                                            <rect key="frame" x="8" y="8" width="228" height="260.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="vXs-5r-YuH" secondAttribute="height" multiplier="14:16" id="C1y-pV-ZbU"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbE-9e-QRr">
+                                            <rect key="frame" x="8" y="277.5" width="228" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="hHO-rF-4hW"/>
+                                            </constraints>
+                                            <string key="text">Bosch SMV53M40GB Fully Integrated Dishwasher Bosch SMV53M40GB Fully Integrated Dishwasher Bosch SMV53M40GB Fully Integrated Dishwasher</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£9999.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43e-gh-0br">
+                                            <rect key="frame" x="8" y="302" width="228" height="14.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="rvi-ND-HCi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="43e-gh-0br" firstAttribute="leading" secondItem="WlU-wT-0an" secondAttribute="leadingMargin" id="9nv-xO-qcm"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="43e-gh-0br" secondAttribute="trailing" id="CAl-50-hOQ"/>
+                                    <constraint firstItem="43e-gh-0br" firstAttribute="top" secondItem="XbE-9e-QRr" secondAttribute="bottom" constant="11" id="Deh-Gz-DSr"/>
+                                    <constraint firstItem="XbE-9e-QRr" firstAttribute="leading" secondItem="WlU-wT-0an" secondAttribute="leadingMargin" id="Eiu-SD-KIb"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="XbE-9e-QRr" secondAttribute="trailing" id="SSl-T3-0Y6"/>
+                                    <constraint firstItem="XbE-9e-QRr" firstAttribute="top" secondItem="vXs-5r-YuH" secondAttribute="bottom" constant="9" id="bW4-DI-JnA"/>
+                                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="43e-gh-0br" secondAttribute="bottom" id="brA-oe-sky"/>
+                                    <constraint firstItem="vXs-5r-YuH" firstAttribute="leading" secondItem="WlU-wT-0an" secondAttribute="leadingMargin" id="mNb-7u-c7A"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="vXs-5r-YuH" secondAttribute="trailing" id="mmx-vv-cTD"/>
+                                    <constraint firstItem="vXs-5r-YuH" firstAttribute="top" secondItem="WlU-wT-0an" secondAttribute="topMargin" id="u4c-fe-O87"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="image" destination="vXs-5r-YuH" id="uK1-kV-xMC"/>
+                                    <outlet property="price" destination="43e-gh-0br" id="dVN-u7-3sJ"/>
+                                    <outlet property="productDescription" destination="XbE-9e-QRr" id="xxB-xU-cWA"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="r28-kJ-GgG" id="adz-7q-yxR"/>
+                            <outlet property="delegate" destination="r28-kJ-GgG" id="A3A-50-ZZB"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Dishwashers" id="eTg-eU-Apm"/>
+                    <connections>
+                        <outlet property="appConfiguration" destination="CvP-S7-WBQ" id="Srk-PU-Tq2"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEO-l7-oEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="CvP-S7-WBQ" customClass="ApplicationConfiguration" customModule="DishwashersApp" customModuleProvider="target"/>
             </objects>
+            <point key="canvasLocation" x="-38.0859375" y="544.53125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image_placeholder" width="300" height="300"/>
+    </resources>
 </document>
