@@ -71,4 +71,23 @@ class JohnLewisAPITests: XCTestCase {
         XCTAssertEqual(returnedProducts.count, 20)
     }
     
+    func testGetProductDetails() {
+        
+        // prepare
+        var returnedProduct:JohnLewisProductDetails? = nil
+        let shouldReturnProductDetails = expectation(description: "Should return product details")
+        let productId = "123"
+        let result:JohnLewisAPI.GetProductDetailsResult = {(prod: JohnLewisProductDetails) in
+            returnedProduct = prod
+            shouldReturnProductDetails.fulfill()
+        }
+        
+        // execute
+        api.getProductDetails(productId: productId, result: result)
+        wait(for: [shouldReturnProductDetails], timeout: 2)
+        
+        // verify
+        XCTAssertNotNil(returnedProduct)
+    }
+    
 }

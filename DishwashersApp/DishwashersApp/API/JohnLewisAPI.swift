@@ -54,4 +54,8 @@ public class JohnLewisAPI: NSObject {
         
     }
 
+    public typealias GetProductDetailsResult = (_ product: JohnLewisProductDetails) -> ()
+    public func getProductDetails(productId:String, result: @escaping GetProductDetailsResult) {
+        
+    }
 }

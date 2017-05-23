@@ -24,6 +24,10 @@ public struct JohnLewisProduct {
     let imageURL: URL
 }
 
+public struct JohnLewisProductDetails {
+    
+}
+
 // MARK: - Create from JSON
 
 /**
