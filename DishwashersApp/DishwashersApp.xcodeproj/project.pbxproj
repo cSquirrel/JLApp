@@ -16,6 +16,12 @@
 		329439F21ED3498100FB5C2A /* DishwashersAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329439F11ED3498100FB5C2A /* DishwashersAppUITests.swift */; };
 		32943A021ED34AA600FB5C2A /* JohnLewisAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */; };
 		32943A041ED34AB800FB5C2A /* JohnLewisAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */; };
+		32943A071ED4073400FB5C2A /* NetworkServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A061ED4073400FB5C2A /* NetworkServicesProvider.swift */; };
+		32943A091ED4081C00FB5C2A /* JSONServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A081ED4081C00FB5C2A /* JSONServicesProvider.swift */; };
+		32943A0B1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0A1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift */; };
+		32943A0E1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */; };
+		32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */; };
+		32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A111ED4208700FB5C2A /* JohnLewisModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		329439F31ED3498100FB5C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisAPI.swift; sourceTree = "<group>"; };
 		32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisAPITests.swift; sourceTree = "<group>"; };
+		32943A061ED4073400FB5C2A /* NetworkServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServicesProvider.swift; sourceTree = "<group>"; };
+		32943A081ED4081C00FB5C2A /* JSONServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONServicesProvider.swift; sourceTree = "<group>"; };
+		32943A0A1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperationsExecutor.swift; sourceTree = "<group>"; };
+		32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkServicesProvider.swift; sourceTree = "<group>"; };
+		32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkOperationsExecutor.swift; sourceTree = "<group>"; };
+		32943A111ED4208700FB5C2A /* JohnLewisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,7 @@
 		329439D01ED3498100FB5C2A /* DishwashersApp */ = {
 			isa = PBXGroup;
 			children = (
+				32943A051ED4070300FB5C2A /* Networking */,
 				329439FF1ED34A5C00FB5C2A /* API */,
 				329439D11ED3498100FB5C2A /* AppDelegate.swift */,
 				329439D31ED3498100FB5C2A /* ViewController.swift */,
@@ -115,6 +128,7 @@
 		329439E51ED3498100FB5C2A /* DishwashersAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				32943A0C1ED40B2000FB5C2A /* Mock */,
 				32943A001ED34A6C00FB5C2A /* API */,
 				329439E61ED3498100FB5C2A /* DishwashersAppTests.swift */,
 				329439E81ED3498100FB5C2A /* Info.plist */,
@@ -135,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */,
+				32943A111ED4208700FB5C2A /* JohnLewisModel.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -145,6 +160,25 @@
 				32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		32943A051ED4070300FB5C2A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				32943A061ED4073400FB5C2A /* NetworkServicesProvider.swift */,
+				32943A0A1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift */,
+				32943A081ED4081C00FB5C2A /* JSONServicesProvider.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		32943A0C1ED40B2000FB5C2A /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */,
+				32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,9 +318,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */,
 				329439D41ED3498100FB5C2A /* ViewController.swift in Sources */,
+				32943A071ED4073400FB5C2A /* NetworkServicesProvider.swift in Sources */,
 				329439D21ED3498100FB5C2A /* AppDelegate.swift in Sources */,
+				32943A0B1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift in Sources */,
 				32943A021ED34AA600FB5C2A /* JohnLewisAPI.swift in Sources */,
+				32943A091ED4081C00FB5C2A /* JSONServicesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +332,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32943A0E1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift in Sources */,
+				32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */,
 				32943A041ED34AB800FB5C2A /* JohnLewisAPITests.swift in Sources */,
 				329439E71ED3498100FB5C2A /* DishwashersAppTests.swift in Sources */,
 			);

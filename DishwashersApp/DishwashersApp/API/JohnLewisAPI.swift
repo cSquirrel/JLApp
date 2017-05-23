@@ -8,26 +8,39 @@
 
 import UIKit
 
-struct JohnLewisProduct {
-    
-    // This is the product id that should be used to retrieve the product 
-    // information for the product details screen.
-    let productId: String
-    
-    // We can assume for this test that the price is in £s.
-    let price: String
-    
-    // This is the title that should be used on the product grid page
-    let title: String
-    
-    // The url of the image to show on the grid page.
-    let imageURL: URL
-}
+public class JohnLewisAPI: NSObject {
 
-class JohnLewisAPI: NSObject {
-
-    func getProductsGrid() -> [JohnLewisProduct] {
-        return [JohnLewisProduct(productId:"product_1",
+    private let networkProvider: NetworkServicesProvider
+    private let networkExecutor: NetworkOperationsExecutor
+    
+    init(_ network: NetworkServicesProvider, executor: NetworkOperationsExecutor) {
+        
+        networkProvider = network
+        networkExecutor = executor
+        
+    }
+    
+    public typealias GetProductsGridResult = (_ products: [JohnLewisProduct]) -> ()
+    public func getProductsGrid(result: @escaping GetProductsGridResult) {
+        
+        let result = { (status: NetworkOperationStatus) in
+            
+            switch status {
+            case .successful(let data):
+                let products = JohnLewisAPI.parse(productsAsJsonData: data)
+                result(products)
+            case.failed:
+                return
+            }
+        }
+        let getProductsOp = networkProvider.createGETOperation(url: URL(string:"http://bbc.co.uk/")!, result: result)
+        networkExecutor.execute(operation: getProductsOp)
+        
+    }
+    
+    static func parse(productsAsJsonData: Data) -> [JohnLewisProduct] {
+        
+        let result = [JohnLewisProduct(productId:"product_1",
                                  price: "9.99",
                                  title: "Product #1",
                                  imageURL: URL(string: "http://test.server.com/image1.png")!),
@@ -35,9 +48,11 @@ class JohnLewisAPI: NSObject {
                                  price: "9.99",
                                  title: "Product #3",
                                  imageURL: URL(string: "http://test.server.com/image2.png")!),
-            JohnLewisProduct(productId:"product_3",
-                             price: "9.99",
-                             title: "Product #3",
-                             imageURL: URL(string: "http://test.server.com/image3.png")!)]
+                JohnLewisProduct(productId:"product_3",
+                                 price: "9.99",
+                                 title: "Product #3",
+                                 imageURL: URL(string: "http://test.server.com/image3.png")!)]
+        
+        return result
     }
 }

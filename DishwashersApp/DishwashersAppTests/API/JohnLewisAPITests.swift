@@ -15,7 +15,10 @@ class JohnLewisAPITests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        api = JohnLewisAPI()
+        
+        let sp = MockNetworkServicesProvider()
+        let e = MockNetworkOperationsExecutor()
+        api = JohnLewisAPI(sp, executor: e)
     }
     
     override func tearDown() {
@@ -26,12 +29,19 @@ class JohnLewisAPITests: XCTestCase {
     func testGetProductsGrid() {
         
         // prepare
+        var products:[JohnLewisProduct] = []
+        let returnProducts = expectation(description: "Should return products")
+        let result:JohnLewisAPI.GetProductsGridResult = {(prods: [JohnLewisProduct]) in
+            products = prods
+            returnProducts.fulfill()
+        }
         
         // execute
-        let result = api.getProductsGrid()
+        api.getProductsGrid(result:result)
+        wait(for: [returnProducts], timeout: 2)
         
         // verify
-        XCTAssertEqual(result.count, 3)
+        XCTAssertEqual(products.count, 3)
     }
     
 }
