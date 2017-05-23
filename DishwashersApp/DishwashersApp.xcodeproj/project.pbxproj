@@ -23,6 +23,8 @@
 		32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */; };
 		32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A111ED4208700FB5C2A /* JohnLewisModel.swift */; };
 		32943A141ED4220900FB5C2A /* JohnLewisProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */; };
+		32943A161ED42CE400FB5C2A /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A151ED42CE400FB5C2A /* TestUtils.swift */; };
+		32943A191ED4434800FB5C2A /* multiple_products.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A181ED4434800FB5C2A /* multiple_products.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkOperationsExecutor.swift; sourceTree = "<group>"; };
 		32943A111ED4208700FB5C2A /* JohnLewisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisModel.swift; sourceTree = "<group>"; };
 		32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisProductTests.swift; sourceTree = "<group>"; };
+		32943A151ED42CE400FB5C2A /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		32943A181ED4434800FB5C2A /* multiple_products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = multiple_products.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,10 +134,12 @@
 		329439E51ED3498100FB5C2A /* DishwashersAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				32943A171ED4433D00FB5C2A /* TestData */,
 				32943A0C1ED40B2000FB5C2A /* Mock */,
 				32943A001ED34A6C00FB5C2A /* API */,
 				329439E61ED3498100FB5C2A /* DishwashersAppTests.swift */,
 				329439E81ED3498100FB5C2A /* Info.plist */,
+				32943A151ED42CE400FB5C2A /* TestUtils.swift */,
 			);
 			path = DishwashersAppTests;
 			sourceTree = "<group>";
@@ -182,6 +188,14 @@
 				32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		32943A171ED4433D00FB5C2A /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				32943A181ED4434800FB5C2A /* multiple_products.json */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32943A191ED4434800FB5C2A /* multiple_products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32943A0E1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift in Sources */,
+				32943A161ED42CE400FB5C2A /* TestUtils.swift in Sources */,
 				32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */,
 				32943A041ED34AB800FB5C2A /* JohnLewisAPITests.swift in Sources */,
 				32943A141ED4220900FB5C2A /* JohnLewisProductTests.swift in Sources */,

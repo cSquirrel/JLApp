@@ -64,4 +64,28 @@ class JohnLewisProductTests: XCTestCase {
         XCTAssertEqual(result?[1].imageURL, URL(string: "http://test.server.com/image_product_id_2.png")!)
 
     }
+    
+    func testParseProductsAsJsonData() {
+    
+        // prepare 
+        let jsonData = TestUtils.loadJSONData(fileName: "multiple_products")!
+        
+        // execute
+        let result = JohnLewisProduct.parse(productsAsJsonData: jsonData)
+        
+        // verify
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.count, 2)
+        
+        XCTAssertEqual(result[0].productId, "product_id_1")
+        XCTAssertEqual(result[0].price, "9.99 product_id_1")
+        XCTAssertEqual(result[0].title, "Product product_id_1")
+        XCTAssertEqual(result[0].imageURL, URL(string: "http://test.server.com/image_product_id_1.png")!)
+        
+        XCTAssertEqual(result[1].productId, "product_id_2")
+        XCTAssertEqual(result[1].price, "9.99 product_id_2")
+        XCTAssertEqual(result[1].title, "Product product_id_2")
+        XCTAssertEqual(result[1].imageURL, URL(string: "http://test.server.com/image_product_id_2.png")!)
+        
+    }
 }

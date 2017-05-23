@@ -1,0 +1,20 @@
+{
+    "products": [
+                 {
+                    "productId": "product_id_1",
+                    "title": "Product product_id_1",
+                    "price": {
+                        "now": "9.99 product_id_1"
+                    },
+                    "imageURL": "http://test.server.com/image_product_id_1.png"
+                 },
+                 {
+                 "productId": "product_id_2",
+                 "title": "Product product_id_2",
+                 "price": {
+                 "now": "9.99 product_id_2"
+                 },
+                 "imageURL": "http://test.server.com/image_product_id_2.png"
+                 }
+              ]
+}

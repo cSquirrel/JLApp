@@ -27,7 +27,7 @@ public class JohnLewisAPI: NSObject {
             
             switch status {
             case .successful(let data):
-                let products = JohnLewisAPI.parse(productsAsJsonData: data)
+                let products = JohnLewisProduct.parse(productsAsJsonData: data)
                 result(products)
             case.failed:
                 return
@@ -37,22 +37,5 @@ public class JohnLewisAPI: NSObject {
         networkExecutor.execute(operation: getProductsOp)
         
     }
-    
-    static func parse(productsAsJsonData: Data) -> [JohnLewisProduct] {
-        
-        let result = [JohnLewisProduct(productId:"product_1",
-                                 price: "9.99",
-                                 title: "Product #1",
-                                 imageURL: URL(string: "http://test.server.com/image1.png")!),
-                JohnLewisProduct(productId:"product_2",
-                                 price: "9.99",
-                                 title: "Product #3",
-                                 imageURL: URL(string: "http://test.server.com/image2.png")!),
-                JohnLewisProduct(productId:"product_3",
-                                 price: "9.99",
-                                 title: "Product #3",
-                                 imageURL: URL(string: "http://test.server.com/image3.png")!)]
-        
-        return result
-    }
+
 }

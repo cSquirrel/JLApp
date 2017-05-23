@@ -38,6 +38,7 @@ public struct JohnLewisProduct {
 extension JohnLewisProduct {
     
     enum JsonKey {
+        static let products = "products"
         static let productId = "productId"
         static let price = "price"
         static let priceNow = "now"
@@ -77,6 +78,22 @@ extension JohnLewisProduct {
         })
         
         return result
+    }
+    
+    public static func parse(productsAsJsonData jsonData: Data) -> [JohnLewisProduct] {
+        
+        guard
+            let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: []),
+            let productsAsJsonObject = jsonObject as? Dictionary<String,Any>,
+            let productsArray = productsAsJsonObject[JsonKey.products] as? Array<Any> else {
+                return []
+        }
+        
+        guard let products = createProducts(fromJson: productsArray) else {
+            return []
+        }
+        
+        return products
     }
     
 }
