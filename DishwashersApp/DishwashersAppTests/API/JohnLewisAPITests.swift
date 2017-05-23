@@ -12,13 +12,14 @@ import XCTest
 class JohnLewisAPITests: XCTestCase {
     
     var api: JohnLewisAPI!
+    var networkServicesProvider: MockNetworkServicesProvider!
     
     override func setUp() {
         super.setUp()
         
-        let sp = MockNetworkServicesProvider()
+        networkServicesProvider = MockNetworkServicesProvider()
         let e = MockNetworkOperationsExecutor()
-        api = JohnLewisAPI(sp, executor: e)
+        api = JohnLewisAPI(networkServicesProvider, executor: e)
     }
     
     override func tearDown() {
@@ -29,19 +30,22 @@ class JohnLewisAPITests: XCTestCase {
     func testGetProductsGrid() {
         
         // prepare
-        var products:[JohnLewisProduct] = []
-        let returnProducts = expectation(description: "Should return products")
+        let jsonData = TestUtils.loadJSONData(fileName: "products_from_server")!
+        networkServicesProvider.mockDataToReturn = jsonData
+        
+        var returnedProducts:[JohnLewisProduct] = []
+        let shouldReturnProducts = expectation(description: "Should return products")
         let result:JohnLewisAPI.GetProductsGridResult = {(prods: [JohnLewisProduct]) in
-            products = prods
-            returnProducts.fulfill()
+            returnedProducts = prods
+            shouldReturnProducts.fulfill()
         }
         
         // execute
         api.getProductsGrid(result:result)
-        wait(for: [returnProducts], timeout: 2)
+        wait(for: [shouldReturnProducts], timeout: 2)
         
         // verify
-        XCTAssertEqual(products.count, 3)
+        XCTAssertEqual(returnedProducts.count, 20)
     }
     
 }
