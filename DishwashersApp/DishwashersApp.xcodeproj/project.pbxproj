@@ -24,7 +24,8 @@
 		32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A111ED4208700FB5C2A /* JohnLewisModel.swift */; };
 		32943A141ED4220900FB5C2A /* JohnLewisProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */; };
 		32943A161ED42CE400FB5C2A /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A151ED42CE400FB5C2A /* TestUtils.swift */; };
-		32943A191ED4434800FB5C2A /* multiple_products.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A181ED4434800FB5C2A /* multiple_products.json */; };
+		32943A191ED4434800FB5C2A /* two_simple_products.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A181ED4434800FB5C2A /* two_simple_products.json */; };
+		32943A1B1ED4487C00FB5C2A /* products_from_server.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A1A1ED4487C00FB5C2A /* products_from_server.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +69,8 @@
 		32943A111ED4208700FB5C2A /* JohnLewisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisModel.swift; sourceTree = "<group>"; };
 		32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisProductTests.swift; sourceTree = "<group>"; };
 		32943A151ED42CE400FB5C2A /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
-		32943A181ED4434800FB5C2A /* multiple_products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = multiple_products.json; sourceTree = "<group>"; };
+		32943A181ED4434800FB5C2A /* two_simple_products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = two_simple_products.json; sourceTree = "<group>"; };
+		32943A1A1ED4487C00FB5C2A /* products_from_server.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products_from_server.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +195,8 @@
 		32943A171ED4433D00FB5C2A /* TestData */ = {
 			isa = PBXGroup;
 			children = (
-				32943A181ED4434800FB5C2A /* multiple_products.json */,
+				32943A181ED4434800FB5C2A /* two_simple_products.json */,
+				32943A1A1ED4487C00FB5C2A /* products_from_server.json */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -318,7 +321,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32943A191ED4434800FB5C2A /* multiple_products.json in Resources */,
+				32943A1B1ED4487C00FB5C2A /* products_from_server.json in Resources */,
+				32943A191ED4434800FB5C2A /* two_simple_products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

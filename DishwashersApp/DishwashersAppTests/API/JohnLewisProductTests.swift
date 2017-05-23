@@ -40,6 +40,58 @@ class JohnLewisProductTests: XCTestCase {
         XCTAssertEqual(result?.imageURL, URL(string: "http://test.server.com/image_product_id_1.png")!)
     }
     
+    func testCreateProduct_NoProductId() {
+        
+        // prepare
+        var productAsJson = createMockProduct("product_id_1")
+        productAsJson.removeValue(forKey: "productId")
+        
+        // execute
+        let result = JohnLewisProduct.createProduct(fromJson: productAsJson)
+        
+        // verify
+        XCTAssertNil(result)
+    }
+    
+    func testCreateProduct_NoPrice() {
+        
+        // prepare
+        var productAsJson = createMockProduct("product_id_1")
+        productAsJson.removeValue(forKey: "price")
+        
+        // execute
+        let result = JohnLewisProduct.createProduct(fromJson: productAsJson)
+        
+        // verify
+        XCTAssertNil(result)
+    }
+    
+    func testCreateProduct_NoTitle() {
+        
+        // prepare
+        var productAsJson = createMockProduct("product_id_1")
+        productAsJson.removeValue(forKey: "title")
+        
+        // execute
+        let result = JohnLewisProduct.createProduct(fromJson: productAsJson)
+        
+        // verify
+        XCTAssertNil(result)
+    }
+
+    func testCreateProduct_NoImage() {
+        
+        // prepare
+        var productAsJson = createMockProduct("product_id_1")
+        productAsJson.removeValue(forKey: "image")
+        
+        // execute
+        let result = JohnLewisProduct.createProduct(fromJson: productAsJson)
+        
+        // verify
+        XCTAssertNil(result)
+    }
+
     func testCreateProducts() {
         
         // prepare
@@ -68,7 +120,7 @@ class JohnLewisProductTests: XCTestCase {
     func testParseProductsAsJsonData() {
     
         // prepare 
-        let jsonData = TestUtils.loadJSONData(fileName: "multiple_products")!
+        let jsonData = TestUtils.loadJSONData(fileName: "two_simple_products")!
         
         // execute
         let result = JohnLewisProduct.parse(productsAsJsonData: jsonData)
@@ -88,4 +140,19 @@ class JohnLewisProductTests: XCTestCase {
         XCTAssertEqual(result[1].imageURL, URL(string: "http://test.server.com/image_product_id_2.png")!)
         
     }
+    
+    func testParseMultipleProductsFromServer() {
+        
+        // prepare
+        let jsonData = TestUtils.loadJSONData(fileName: "products_from_server")!
+        
+        // execute
+        let result = JohnLewisProduct.parse(productsAsJsonData: jsonData)
+        
+        // verify
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.count, 20)
+        
+    }
+
 }
