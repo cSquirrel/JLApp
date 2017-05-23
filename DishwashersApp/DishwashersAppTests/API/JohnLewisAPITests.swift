@@ -9,6 +9,25 @@
 import XCTest
 @testable import DishwashersApp
 
+class JohnLewisAPIConfigTests: XCTestCase {
+    
+    func testCreateEndpointURL() {
+        
+        // prepare
+        let baseURL = URL(string:"http/bbc.co.uk/api/")!
+        let config = JohnLewisAPIConfig(networkProvider: MockNetworkServicesProvider(),
+                                        networkExecutor: MockNetworkOperationsExecutor(),
+                                        baseURL: baseURL,
+                                        apiKey: "dummy_key")
+    
+        // execute
+        let result = config.createEndpointURL(servicePath: "service/path")
+        
+        // verify
+        XCTAssertEqual(result.absoluteString, "http/bbc.co.uk/api/service/path")
+    }
+}
+
 class JohnLewisAPITests: XCTestCase {
     
     var api: JohnLewisAPI!
@@ -19,7 +38,11 @@ class JohnLewisAPITests: XCTestCase {
         
         networkServicesProvider = MockNetworkServicesProvider()
         let e = MockNetworkOperationsExecutor()
-        api = JohnLewisAPI(networkServicesProvider, executor: e)
+        let config = JohnLewisAPIConfig(networkProvider: networkServicesProvider,
+                                        networkExecutor: e,
+                                        baseURL: URL(string:"http://bbc.co.uk")!,
+                                        apiKey: "dummy_key")
+        api = JohnLewisAPI(config)
     }
     
     override func tearDown() {
@@ -41,7 +64,7 @@ class JohnLewisAPITests: XCTestCase {
         }
         
         // execute
-        api.getProductsGrid(result:result)
+        api.getProductsGrid(query: "mock_query", result:result)
         wait(for: [shouldReturnProducts], timeout: 2)
         
         // verify
