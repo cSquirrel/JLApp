@@ -24,3 +24,15 @@ public struct JohnLewisProduct {
     let imageURL: URL
 }
 
+// MARK: - Create from JSON
+extension JohnLewisProduct {
+    
+    public static func createProducts(fromJson: Array<Any?>) -> [JohnLewisProduct]? {
+        return nil
+    }
+    
+    public static func createProduct(fromJson: Dictionary<String, Any?>) -> JohnLewisProduct? {
+        return nil
+    }
+    
+}

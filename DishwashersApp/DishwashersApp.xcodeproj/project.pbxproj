@@ -22,6 +22,7 @@
 		32943A0E1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */; };
 		32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */; };
 		32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A111ED4208700FB5C2A /* JohnLewisModel.swift */; };
+		32943A141ED4220900FB5C2A /* JohnLewisProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkServicesProvider.swift; sourceTree = "<group>"; };
 		32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkOperationsExecutor.swift; sourceTree = "<group>"; };
 		32943A111ED4208700FB5C2A /* JohnLewisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisModel.swift; sourceTree = "<group>"; };
+		32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisProductTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */,
+				32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				32943A0E1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift in Sources */,
 				32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */,
 				32943A041ED34AB800FB5C2A /* JohnLewisAPITests.swift in Sources */,
+				32943A141ED4220900FB5C2A /* JohnLewisProductTests.swift in Sources */,
 				329439E71ED3498100FB5C2A /* DishwashersAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
