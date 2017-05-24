@@ -74,6 +74,9 @@ class JohnLewisAPITests: XCTestCase {
     func testGetProductDetails() {
         
         // prepare
+        let jsonData = TestUtils.loadJSONData(fileName: "product_details_from_server")!
+        networkServicesProvider.mockDataToReturn = jsonData
+
         var returnedProduct:JohnLewisProductDetails? = nil
         let shouldReturnProductDetails = expectation(description: "Should return product details")
         let productId = "123"

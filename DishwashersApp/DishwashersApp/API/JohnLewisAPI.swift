@@ -56,6 +56,22 @@ public class JohnLewisAPI: NSObject {
 
     public typealias GetProductDetailsResult = (_ product: JohnLewisProductDetails) -> ()
     public func getProductDetails(productId:String, result: @escaping GetProductDetailsResult) {
+     
+        let result = { (status: NetworkOperationStatus) in
+            
+            switch status {
+            case .successful(let data):
+                guard let product = JohnLewisProductDetails.parse(productsAsJsonData: data) else {
+                    return
+                }
+                result(product)
+            case.failed:
+                return
+            }
+        }
         
+        let endpointURL = config.createEndpointURL(servicePath: "products/\(productId)")
+        let getProductsOp = config.networkProvider.createGETOperation(url: endpointURL, result: result)
+        config.networkExecutor.execute(operation: getProductsOp)
     }
 }
