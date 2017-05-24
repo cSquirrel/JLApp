@@ -33,9 +33,13 @@ struct JohnLewisAPIConfig {
 public class JohnLewisAPI: NSObject {
 
     enum Const {
+        
         static let apiKeyQueryParam = "key"
         static let searchQueryParam = "q"
         static let pageSizeQueryParam = "pageSize"
+        
+        static let endpointSearch = "products/search"
+        static let endpointProduct = {(productId:String) in return "products/\(productId)"}
     }
     
     private let config: JohnLewisAPIConfig
@@ -63,7 +67,7 @@ public class JohnLewisAPI: NSObject {
         let queryParams = [Const.searchQueryParam:query,
                            Const.apiKeyQueryParam:config.apiKey,
                            Const.pageSizeQueryParam:String(searchPageSize)]
-        let endpointURL = config.createEndpointURL(servicePath: "products/search", queryParams: queryParams)
+        let endpointURL = config.createEndpointURL(servicePath: Const.endpointSearch, queryParams: queryParams)
         let getProductsOp = config.networkProvider.createGETOperation(url: endpointURL, operationResult: result)
         config.networkExecutor.execute(operation: getProductsOp)
         
@@ -86,7 +90,7 @@ public class JohnLewisAPI: NSObject {
         }
         
         let queryParams = [Const.apiKeyQueryParam:config.apiKey]
-        let endpointURL = config.createEndpointURL(servicePath: "products/\(productId)", queryParams: queryParams)
+        let endpointURL = config.createEndpointURL(servicePath: Const.endpointProduct(productId), queryParams: queryParams)
         let getProductsOp = config.networkProvider.createGETOperation(url: endpointURL, operationResult: result)
         config.networkExecutor.execute(operation: getProductsOp)
     }
