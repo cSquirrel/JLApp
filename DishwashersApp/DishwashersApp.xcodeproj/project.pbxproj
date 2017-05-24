@@ -1,0 +1,697 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3219B1861ED5833F0075553A /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3219B1851ED5833F0075553A /* ProductDetailsView.swift */; };
+		3219B1881ED5834D0075553A /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3219B1871ED5834D0075553A /* ProductDetailsView.xib */; };
+		329439D21ED3498100FB5C2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329439D11ED3498100FB5C2A /* AppDelegate.swift */; };
+		329439D71ED3498100FB5C2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329439D51ED3498100FB5C2A /* Main.storyboard */; };
+		329439D91ED3498100FB5C2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329439D81ED3498100FB5C2A /* Assets.xcassets */; };
+		329439DC1ED3498100FB5C2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329439DA1ED3498100FB5C2A /* LaunchScreen.storyboard */; };
+		329439E71ED3498100FB5C2A /* DishwashersAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329439E61ED3498100FB5C2A /* DishwashersAppTests.swift */; };
+		329439F21ED3498100FB5C2A /* DishwashersAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329439F11ED3498100FB5C2A /* DishwashersAppUITests.swift */; };
+		32943A021ED34AA600FB5C2A /* JohnLewisAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */; };
+		32943A041ED34AB800FB5C2A /* JohnLewisAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */; };
+		32943A071ED4073400FB5C2A /* NetworkServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A061ED4073400FB5C2A /* NetworkServicesProvider.swift */; };
+		32943A091ED4081C00FB5C2A /* JSONServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A081ED4081C00FB5C2A /* JSONServicesProvider.swift */; };
+		32943A0B1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0A1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift */; };
+		32943A0E1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */; };
+		32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */; };
+		32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A111ED4208700FB5C2A /* JohnLewisModel.swift */; };
+		32943A141ED4220900FB5C2A /* JohnLewisModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A131ED4220900FB5C2A /* JohnLewisModelTests.swift */; };
+		32943A161ED42CE400FB5C2A /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A151ED42CE400FB5C2A /* TestUtils.swift */; };
+		32943A191ED4434800FB5C2A /* two_simple_products.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A181ED4434800FB5C2A /* two_simple_products.json */; };
+		32943A1B1ED4487C00FB5C2A /* products_from_server.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A1A1ED4487C00FB5C2A /* products_from_server.json */; };
+		32943A1E1ED4571B00FB5C2A /* ProductsGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A1D1ED4571B00FB5C2A /* ProductsGridViewController.swift */; };
+		32943A201ED4598D00FB5C2A /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A1F1ED4598D00FB5C2A /* ProductCell.swift */; };
+		329D9ECB1ED4610A00020D0E /* ApplicationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D9ECA1ED4610A00020D0E /* ApplicationConfiguration.swift */; };
+		32C2B6C41ED490470054D2BC /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C2B6C31ED490470054D2BC /* ProductDetailsViewController.swift */; };
+		32C2B6C61ED4D2F50054D2BC /* product_details_from_server.json in Resources */ = {isa = PBXBuildFile; fileRef = 32C2B6C51ED4D2F50054D2BC /* product_details_from_server.json */; };
+		32C2B6C81ED4D3250054D2BC /* simple_product.json in Resources */ = {isa = PBXBuildFile; fileRef = 32C2B6C71ED4D3250054D2BC /* simple_product.json */; };
+		32C2B6CB1ED56D070054D2BC /* ProductInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C2B6CA1ED56D070054D2BC /* ProductInfoView.swift */; };
+		32C2B6CD1ED56DE10054D2BC /* ProductInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C2B6CC1ED56DE10054D2BC /* ProductInfoView.xib */; };
+		32C2B6CF1ED5712F0054D2BC /* ProductPhotosCarousel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C2B6CE1ED5712F0054D2BC /* ProductPhotosCarousel.xib */; };
+		32C2B6D11ED5713B0054D2BC /* ProductPhotosCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C2B6D01ED5713B0054D2BC /* ProductPhotosCarousel.swift */; };
+		32C2B6D31ED571530054D2BC /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C2B6D21ED571530054D2BC /* DesignableView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		329439E31ED3498100FB5C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 329439C61ED3498100FB5C2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 329439CD1ED3498100FB5C2A;
+			remoteInfo = DishwashersApp;
+		};
+		329439EE1ED3498100FB5C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 329439C61ED3498100FB5C2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 329439CD1ED3498100FB5C2A;
+			remoteInfo = DishwashersApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3219B1851ED5833F0075553A /* ProductDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
+		3219B1871ED5834D0075553A /* ProductDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailsView.xib; sourceTree = "<group>"; };
+		329439CE1ED3498100FB5C2A /* DishwashersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DishwashersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		329439D11ED3498100FB5C2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		329439D61ED3498100FB5C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		329439D81ED3498100FB5C2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		329439DB1ED3498100FB5C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		329439DD1ED3498100FB5C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		329439E21ED3498100FB5C2A /* DishwashersAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishwashersAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		329439E61ED3498100FB5C2A /* DishwashersAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwashersAppTests.swift; sourceTree = "<group>"; };
+		329439E81ED3498100FB5C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		329439ED1ED3498100FB5C2A /* DishwashersAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishwashersAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		329439F11ED3498100FB5C2A /* DishwashersAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwashersAppUITests.swift; sourceTree = "<group>"; };
+		329439F31ED3498100FB5C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisAPI.swift; sourceTree = "<group>"; };
+		32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisAPITests.swift; sourceTree = "<group>"; };
+		32943A061ED4073400FB5C2A /* NetworkServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServicesProvider.swift; sourceTree = "<group>"; };
+		32943A081ED4081C00FB5C2A /* JSONServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONServicesProvider.swift; sourceTree = "<group>"; };
+		32943A0A1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperationsExecutor.swift; sourceTree = "<group>"; };
+		32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkServicesProvider.swift; sourceTree = "<group>"; };
+		32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkOperationsExecutor.swift; sourceTree = "<group>"; };
+		32943A111ED4208700FB5C2A /* JohnLewisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisModel.swift; sourceTree = "<group>"; };
+		32943A131ED4220900FB5C2A /* JohnLewisModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisModelTests.swift; sourceTree = "<group>"; };
+		32943A151ED42CE400FB5C2A /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		32943A181ED4434800FB5C2A /* two_simple_products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = two_simple_products.json; sourceTree = "<group>"; };
+		32943A1A1ED4487C00FB5C2A /* products_from_server.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products_from_server.json; sourceTree = "<group>"; };
+		32943A1D1ED4571B00FB5C2A /* ProductsGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsGridViewController.swift; sourceTree = "<group>"; };
+		32943A1F1ED4598D00FB5C2A /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		329D9ECA1ED4610A00020D0E /* ApplicationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfiguration.swift; sourceTree = "<group>"; };
+		32C2B6C31ED490470054D2BC /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		32C2B6C51ED4D2F50054D2BC /* product_details_from_server.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product_details_from_server.json; sourceTree = "<group>"; };
+		32C2B6C71ED4D3250054D2BC /* simple_product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_product.json; sourceTree = "<group>"; };
+		32C2B6CA1ED56D070054D2BC /* ProductInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInfoView.swift; sourceTree = "<group>"; };
+		32C2B6CC1ED56DE10054D2BC /* ProductInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductInfoView.xib; sourceTree = "<group>"; };
+		32C2B6CE1ED5712F0054D2BC /* ProductPhotosCarousel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductPhotosCarousel.xib; sourceTree = "<group>"; };
+		32C2B6D01ED5713B0054D2BC /* ProductPhotosCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPhotosCarousel.swift; sourceTree = "<group>"; };
+		32C2B6D21ED571530054D2BC /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		329439CB1ED3498100FB5C2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		329439DF1ED3498100FB5C2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		329439EA1ED3498100FB5C2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		329439C51ED3498100FB5C2A = {
+			isa = PBXGroup;
+			children = (
+				329439D01ED3498100FB5C2A /* DishwashersApp */,
+				329439E51ED3498100FB5C2A /* DishwashersAppTests */,
+				329439F01ED3498100FB5C2A /* DishwashersAppUITests */,
+				329439CF1ED3498100FB5C2A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		329439CF1ED3498100FB5C2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				329439CE1ED3498100FB5C2A /* DishwashersApp.app */,
+				329439E21ED3498100FB5C2A /* DishwashersAppTests.xctest */,
+				329439ED1ED3498100FB5C2A /* DishwashersAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		329439D01ED3498100FB5C2A /* DishwashersApp */ = {
+			isa = PBXGroup;
+			children = (
+				32943A1C1ED4571B00FB5C2A /* UI */,
+				32943A051ED4070300FB5C2A /* Networking */,
+				329439FF1ED34A5C00FB5C2A /* API */,
+				329439D11ED3498100FB5C2A /* AppDelegate.swift */,
+				329D9ECA1ED4610A00020D0E /* ApplicationConfiguration.swift */,
+				329439D81ED3498100FB5C2A /* Assets.xcassets */,
+				329439DA1ED3498100FB5C2A /* LaunchScreen.storyboard */,
+				329439DD1ED3498100FB5C2A /* Info.plist */,
+			);
+			path = DishwashersApp;
+			sourceTree = "<group>";
+		};
+		329439E51ED3498100FB5C2A /* DishwashersAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				32943A171ED4433D00FB5C2A /* TestData */,
+				32943A0C1ED40B2000FB5C2A /* Mock */,
+				32943A001ED34A6C00FB5C2A /* API */,
+				329439E61ED3498100FB5C2A /* DishwashersAppTests.swift */,
+				329439E81ED3498100FB5C2A /* Info.plist */,
+				32943A151ED42CE400FB5C2A /* TestUtils.swift */,
+			);
+			path = DishwashersAppTests;
+			sourceTree = "<group>";
+		};
+		329439F01ED3498100FB5C2A /* DishwashersAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				329439F11ED3498100FB5C2A /* DishwashersAppUITests.swift */,
+				329439F31ED3498100FB5C2A /* Info.plist */,
+			);
+			path = DishwashersAppUITests;
+			sourceTree = "<group>";
+		};
+		329439FF1ED34A5C00FB5C2A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				32943A011ED34AA600FB5C2A /* JohnLewisAPI.swift */,
+				32943A111ED4208700FB5C2A /* JohnLewisModel.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		32943A001ED34A6C00FB5C2A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */,
+				32943A131ED4220900FB5C2A /* JohnLewisModelTests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		32943A051ED4070300FB5C2A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				32943A061ED4073400FB5C2A /* NetworkServicesProvider.swift */,
+				32943A0A1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift */,
+				32943A081ED4081C00FB5C2A /* JSONServicesProvider.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		32943A0C1ED40B2000FB5C2A /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */,
+				32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		32943A171ED4433D00FB5C2A /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				32943A181ED4434800FB5C2A /* two_simple_products.json */,
+				32943A1A1ED4487C00FB5C2A /* products_from_server.json */,
+				32C2B6C71ED4D3250054D2BC /* simple_product.json */,
+				32C2B6C51ED4D2F50054D2BC /* product_details_from_server.json */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
+		32943A1C1ED4571B00FB5C2A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				32C2B6C91ED56CE50054D2BC /* UI Components */,
+				329439D51ED3498100FB5C2A /* Main.storyboard */,
+				32943A1D1ED4571B00FB5C2A /* ProductsGridViewController.swift */,
+				32943A1F1ED4598D00FB5C2A /* ProductCell.swift */,
+				32C2B6C31ED490470054D2BC /* ProductDetailsViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		32C2B6C91ED56CE50054D2BC /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				32C2B6D21ED571530054D2BC /* DesignableView.swift */,
+				32C2B6CA1ED56D070054D2BC /* ProductInfoView.swift */,
+				32C2B6CC1ED56DE10054D2BC /* ProductInfoView.xib */,
+				32C2B6D01ED5713B0054D2BC /* ProductPhotosCarousel.swift */,
+				32C2B6CE1ED5712F0054D2BC /* ProductPhotosCarousel.xib */,
+				3219B1851ED5833F0075553A /* ProductDetailsView.swift */,
+				3219B1871ED5834D0075553A /* ProductDetailsView.xib */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		329439CD1ED3498100FB5C2A /* DishwashersApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 329439F61ED3498100FB5C2A /* Build configuration list for PBXNativeTarget "DishwashersApp" */;
+			buildPhases = (
+				329439CA1ED3498100FB5C2A /* Sources */,
+				329439CB1ED3498100FB5C2A /* Frameworks */,
+				329439CC1ED3498100FB5C2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DishwashersApp;
+			productName = DishwashersApp;
+			productReference = 329439CE1ED3498100FB5C2A /* DishwashersApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		329439E11ED3498100FB5C2A /* DishwashersAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 329439F91ED3498100FB5C2A /* Build configuration list for PBXNativeTarget "DishwashersAppTests" */;
+			buildPhases = (
+				329439DE1ED3498100FB5C2A /* Sources */,
+				329439DF1ED3498100FB5C2A /* Frameworks */,
+				329439E01ED3498100FB5C2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				329439E41ED3498100FB5C2A /* PBXTargetDependency */,
+			);
+			name = DishwashersAppTests;
+			productName = DishwashersAppTests;
+			productReference = 329439E21ED3498100FB5C2A /* DishwashersAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		329439EC1ED3498100FB5C2A /* DishwashersAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 329439FC1ED3498100FB5C2A /* Build configuration list for PBXNativeTarget "DishwashersAppUITests" */;
+			buildPhases = (
+				329439E91ED3498100FB5C2A /* Sources */,
+				329439EA1ED3498100FB5C2A /* Frameworks */,
+				329439EB1ED3498100FB5C2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				329439EF1ED3498100FB5C2A /* PBXTargetDependency */,
+			);
+			name = DishwashersAppUITests;
+			productName = DishwashersAppUITests;
+			productReference = 329439ED1ED3498100FB5C2A /* DishwashersAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		329439C61ED3498100FB5C2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Blue Pocket Limited";
+				TargetAttributes = {
+					329439CD1ED3498100FB5C2A = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = FXYZH4KYS4;
+						ProvisioningStyle = Automatic;
+					};
+					329439E11ED3498100FB5C2A = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = FXYZH4KYS4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 329439CD1ED3498100FB5C2A;
+					};
+					329439EC1ED3498100FB5C2A = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = FXYZH4KYS4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 329439CD1ED3498100FB5C2A;
+					};
+				};
+			};
+			buildConfigurationList = 329439C91ED3498100FB5C2A /* Build configuration list for PBXProject "DishwashersApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 329439C51ED3498100FB5C2A;
+			productRefGroup = 329439CF1ED3498100FB5C2A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				329439CD1ED3498100FB5C2A /* DishwashersApp */,
+				329439E11ED3498100FB5C2A /* DishwashersAppTests */,
+				329439EC1ED3498100FB5C2A /* DishwashersAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		329439CC1ED3498100FB5C2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32C2B6CD1ED56DE10054D2BC /* ProductInfoView.xib in Resources */,
+				329439DC1ED3498100FB5C2A /* LaunchScreen.storyboard in Resources */,
+				32C2B6CF1ED5712F0054D2BC /* ProductPhotosCarousel.xib in Resources */,
+				3219B1881ED5834D0075553A /* ProductDetailsView.xib in Resources */,
+				329439D91ED3498100FB5C2A /* Assets.xcassets in Resources */,
+				329439D71ED3498100FB5C2A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		329439E01ED3498100FB5C2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32943A1B1ED4487C00FB5C2A /* products_from_server.json in Resources */,
+				32C2B6C81ED4D3250054D2BC /* simple_product.json in Resources */,
+				32C2B6C61ED4D2F50054D2BC /* product_details_from_server.json in Resources */,
+				32943A191ED4434800FB5C2A /* two_simple_products.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		329439EB1ED3498100FB5C2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		329439CA1ED3498100FB5C2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				329D9ECB1ED4610A00020D0E /* ApplicationConfiguration.swift in Sources */,
+				32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */,
+				32943A071ED4073400FB5C2A /* NetworkServicesProvider.swift in Sources */,
+				32C2B6D31ED571530054D2BC /* DesignableView.swift in Sources */,
+				32C2B6CB1ED56D070054D2BC /* ProductInfoView.swift in Sources */,
+				32C2B6C41ED490470054D2BC /* ProductDetailsViewController.swift in Sources */,
+				329439D21ED3498100FB5C2A /* AppDelegate.swift in Sources */,
+				32C2B6D11ED5713B0054D2BC /* ProductPhotosCarousel.swift in Sources */,
+				32943A0B1ED40A4000FB5C2A /* NetworkOperationsExecutor.swift in Sources */,
+				32943A021ED34AA600FB5C2A /* JohnLewisAPI.swift in Sources */,
+				32943A201ED4598D00FB5C2A /* ProductCell.swift in Sources */,
+				3219B1861ED5833F0075553A /* ProductDetailsView.swift in Sources */,
+				32943A1E1ED4571B00FB5C2A /* ProductsGridViewController.swift in Sources */,
+				32943A091ED4081C00FB5C2A /* JSONServicesProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		329439DE1ED3498100FB5C2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32943A0E1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift in Sources */,
+				32943A161ED42CE400FB5C2A /* TestUtils.swift in Sources */,
+				32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */,
+				32943A041ED34AB800FB5C2A /* JohnLewisAPITests.swift in Sources */,
+				32943A141ED4220900FB5C2A /* JohnLewisModelTests.swift in Sources */,
+				329439E71ED3498100FB5C2A /* DishwashersAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		329439E91ED3498100FB5C2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				329439F21ED3498100FB5C2A /* DishwashersAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		329439E41ED3498100FB5C2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 329439CD1ED3498100FB5C2A /* DishwashersApp */;
+			targetProxy = 329439E31ED3498100FB5C2A /* PBXContainerItemProxy */;
+		};
+		329439EF1ED3498100FB5C2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 329439CD1ED3498100FB5C2A /* DishwashersApp */;
+			targetProxy = 329439EE1ED3498100FB5C2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		329439D51ED3498100FB5C2A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				329439D61ED3498100FB5C2A /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		329439DA1ED3498100FB5C2A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				329439DB1ED3498100FB5C2A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		329439F41ED3498100FB5C2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		329439F51ED3498100FB5C2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		329439F71ED3498100FB5C2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				INFOPLIST_FILE = DishwashersApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.DishwashersApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		329439F81ED3498100FB5C2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				INFOPLIST_FILE = DishwashersApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.DishwashersApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		329439FA1ED3498100FB5C2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				INFOPLIST_FILE = DishwashersAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.DishwashersAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DishwashersApp.app/DishwashersApp";
+			};
+			name = Debug;
+		};
+		329439FB1ED3498100FB5C2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				INFOPLIST_FILE = DishwashersAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.DishwashersAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DishwashersApp.app/DishwashersApp";
+			};
+			name = Release;
+		};
+		329439FD1ED3498100FB5C2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				INFOPLIST_FILE = DishwashersAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.DishwashersAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DishwashersApp;
+			};
+			name = Debug;
+		};
+		329439FE1ED3498100FB5C2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				INFOPLIST_FILE = DishwashersAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.DishwashersAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DishwashersApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		329439C91ED3498100FB5C2A /* Build configuration list for PBXProject "DishwashersApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				329439F41ED3498100FB5C2A /* Debug */,
+				329439F51ED3498100FB5C2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		329439F61ED3498100FB5C2A /* Build configuration list for PBXNativeTarget "DishwashersApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				329439F71ED3498100FB5C2A /* Debug */,
+				329439F81ED3498100FB5C2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		329439F91ED3498100FB5C2A /* Build configuration list for PBXNativeTarget "DishwashersAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				329439FA1ED3498100FB5C2A /* Debug */,
+				329439FB1ED3498100FB5C2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		329439FC1ED3498100FB5C2A /* Build configuration list for PBXNativeTarget "DishwashersAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				329439FD1ED3498100FB5C2A /* Debug */,
+				329439FE1ED3498100FB5C2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 329439C61ED3498100FB5C2A /* Project object */;
+}
