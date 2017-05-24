@@ -11,6 +11,7 @@
 		3219B1881ED5834D0075553A /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3219B1871ED5834D0075553A /* ProductDetailsView.xib */; };
 		3219B18C1ED5BC380075553A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3219B18A1ED5BC380075553A /* AppDelegate.swift */; };
 		3219B18D1ED5BC380075553A /* ApplicationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3219B18B1ED5BC380075553A /* ApplicationConfiguration.swift */; };
+		3219B18F1ED5BC7A0075553A /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3219B18E1ED5BC7A0075553A /* UIImageView+Extensions.swift */; };
 		329439D71ED3498100FB5C2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329439D51ED3498100FB5C2A /* Main.storyboard */; };
 		329439D91ED3498100FB5C2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329439D81ED3498100FB5C2A /* Assets.xcassets */; };
 		329439DC1ED3498100FB5C2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329439DA1ED3498100FB5C2A /* LaunchScreen.storyboard */; };
@@ -62,6 +63,7 @@
 		3219B1871ED5834D0075553A /* ProductDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailsView.xib; sourceTree = "<group>"; };
 		3219B18A1ED5BC380075553A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3219B18B1ED5BC380075553A /* ApplicationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfiguration.swift; sourceTree = "<group>"; };
+		3219B18E1ED5BC7A0075553A /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		329439CE1ED3498100FB5C2A /* DishwashersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DishwashersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329439D61ED3498100FB5C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		329439D81ED3498100FB5C2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				3219B18A1ED5BC380075553A /* AppDelegate.swift */,
 				3219B18B1ED5BC380075553A /* ApplicationConfiguration.swift */,
+				3219B18E1ED5BC7A0075553A /* UIImageView+Extensions.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3219B18F1ED5BC7A0075553A /* UIImageView+Extensions.swift in Sources */,
 				32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */,
 				32943A071ED4073400FB5C2A /* NetworkServicesProvider.swift in Sources */,
 				32C2B6D31ED571530054D2BC /* DesignableView.swift in Sources */,

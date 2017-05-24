@@ -28,7 +28,8 @@ extension ProductCell {
                 return
             }
             DispatchQueue.main.async {
-                self?.image.image = li
+                // Use the method from extension to reduce memory footprint
+                self?.image.setImage(li)
             }
             
         })

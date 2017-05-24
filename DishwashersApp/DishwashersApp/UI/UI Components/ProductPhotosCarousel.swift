@@ -28,7 +28,8 @@ extension ProductPhotosCarousel {
                 return
             }
             DispatchQueue.main.async { [unowned self] in
-                self.productImageView.image = img
+                // Use the method from extension to reduce memory footprint
+                self.productImageView.setImage(img)
             }
         }
     }
