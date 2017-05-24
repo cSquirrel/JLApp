@@ -27,6 +27,9 @@ class ApplicationConfiguration: NSObject {
     fileprivate func createApiAccess() {
         
         let networkProvider = DefaultServicesProvider()
+        // NOTE: See my comment on the properties
+        networkProvider.imageCache = NSCache<NSURL, UIImage>()
+        networkProvider.jsonCache = NSCache<NSURL, NSData>()
         let networkExecutor = DefaultNetworkOperationsExecutor(configuration: .default)
         
         // These values are hardcoded here but should be provided from an external configuration file
