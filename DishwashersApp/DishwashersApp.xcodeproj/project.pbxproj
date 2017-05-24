@@ -21,7 +21,7 @@
 		32943A0E1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */; };
 		32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */; };
 		32943A121ED4208700FB5C2A /* JohnLewisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A111ED4208700FB5C2A /* JohnLewisModel.swift */; };
-		32943A141ED4220900FB5C2A /* JohnLewisProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */; };
+		32943A141ED4220900FB5C2A /* JohnLewisModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A131ED4220900FB5C2A /* JohnLewisModelTests.swift */; };
 		32943A161ED42CE400FB5C2A /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A151ED42CE400FB5C2A /* TestUtils.swift */; };
 		32943A191ED4434800FB5C2A /* two_simple_products.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A181ED4434800FB5C2A /* two_simple_products.json */; };
 		32943A1B1ED4487C00FB5C2A /* products_from_server.json in Resources */ = {isa = PBXBuildFile; fileRef = 32943A1A1ED4487C00FB5C2A /* products_from_server.json */; };
@@ -29,6 +29,8 @@
 		32943A201ED4598D00FB5C2A /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32943A1F1ED4598D00FB5C2A /* ProductCell.swift */; };
 		329D9ECB1ED4610A00020D0E /* ApplicationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D9ECA1ED4610A00020D0E /* ApplicationConfiguration.swift */; };
 		32C2B6C41ED490470054D2BC /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C2B6C31ED490470054D2BC /* ProductDetailsViewController.swift */; };
+		32C2B6C61ED4D2F50054D2BC /* product_details_from_server.json in Resources */ = {isa = PBXBuildFile; fileRef = 32C2B6C51ED4D2F50054D2BC /* product_details_from_server.json */; };
+		32C2B6C81ED4D3250054D2BC /* simple_product.json in Resources */ = {isa = PBXBuildFile; fileRef = 32C2B6C71ED4D3250054D2BC /* simple_product.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +71,7 @@
 		32943A0D1ED40B3200FB5C2A /* MockNetworkServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkServicesProvider.swift; sourceTree = "<group>"; };
 		32943A0F1ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkOperationsExecutor.swift; sourceTree = "<group>"; };
 		32943A111ED4208700FB5C2A /* JohnLewisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisModel.swift; sourceTree = "<group>"; };
-		32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisProductTests.swift; sourceTree = "<group>"; };
+		32943A131ED4220900FB5C2A /* JohnLewisModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnLewisModelTests.swift; sourceTree = "<group>"; };
 		32943A151ED42CE400FB5C2A /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		32943A181ED4434800FB5C2A /* two_simple_products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = two_simple_products.json; sourceTree = "<group>"; };
 		32943A1A1ED4487C00FB5C2A /* products_from_server.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products_from_server.json; sourceTree = "<group>"; };
@@ -77,6 +79,8 @@
 		32943A1F1ED4598D00FB5C2A /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		329D9ECA1ED4610A00020D0E /* ApplicationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfiguration.swift; sourceTree = "<group>"; };
 		32C2B6C31ED490470054D2BC /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		32C2B6C51ED4D2F50054D2BC /* product_details_from_server.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product_details_from_server.json; sourceTree = "<group>"; };
+		32C2B6C71ED4D3250054D2BC /* simple_product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_product.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				32943A031ED34AB800FB5C2A /* JohnLewisAPITests.swift */,
-				32943A131ED4220900FB5C2A /* JohnLewisProductTests.swift */,
+				32943A131ED4220900FB5C2A /* JohnLewisModelTests.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -203,6 +207,8 @@
 			children = (
 				32943A181ED4434800FB5C2A /* two_simple_products.json */,
 				32943A1A1ED4487C00FB5C2A /* products_from_server.json */,
+				32C2B6C71ED4D3250054D2BC /* simple_product.json */,
+				32C2B6C51ED4D2F50054D2BC /* product_details_from_server.json */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -339,6 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				32943A1B1ED4487C00FB5C2A /* products_from_server.json in Resources */,
+				32C2B6C81ED4D3250054D2BC /* simple_product.json in Resources */,
+				32C2B6C61ED4D2F50054D2BC /* product_details_from_server.json in Resources */,
 				32943A191ED4434800FB5C2A /* two_simple_products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,7 +386,7 @@
 				32943A161ED42CE400FB5C2A /* TestUtils.swift in Sources */,
 				32943A101ED40C4700FB5C2A /* MockNetworkOperationsExecutor.swift in Sources */,
 				32943A041ED34AB800FB5C2A /* JohnLewisAPITests.swift in Sources */,
-				32943A141ED4220900FB5C2A /* JohnLewisProductTests.swift in Sources */,
+				32943A141ED4220900FB5C2A /* JohnLewisModelTests.swift in Sources */,
 				329439E71ED3498100FB5C2A /* DishwashersAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

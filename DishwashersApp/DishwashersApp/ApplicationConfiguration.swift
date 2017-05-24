@@ -39,9 +39,18 @@ fileprivate class MockDataServicesProvider: NetworkServicesProvider {
     }
     
     static let mockJsonString: String = "{\"products\": [\(((1...20)).map({createProductJsonString("pid\($0)")}).joined(separator: ","))]}"
+    
+    static let mockProductDetailsJsonString = "{\"productId\":\"ProductId\",\"title\":\"Mock Product Title\",\"price\":{\"now\":\"549.00\"},\"code\":\"ProductCode\",\"displaySpecialOffer\":\"Extra 3 years guarantee\",\"additionalServices\":{\"includedServices\":[\"2 year guarantee included\"]},\"media\":{\"images\":{\"urls\":[\"http://test.server/image1.png\",\"http://test.server/image2.png\"]}},\"details\":{\"productInformation\":\"Product Information\"},\"features\":[{\"attributes\":[{\"name\":\"Dimensions\",\"value\":\"H84.5 x W60 x D60cm\"},{\"name\":\"Number of Programs\",\"value\":\"6\"}]}]}"
 
-    func createGETOperation(url: URL, result: @escaping NetworkOperationResult) -> NetworkOperationBlock {
+    func createGETOperation(url: URL, operationResult: @escaping NetworkOperationResult) -> NetworkOperationBlock {
         
-        return { result( .successful(MockDataServicesProvider.mockJsonString.data(using: .utf8)!) ) }
+        let result:NetworkOperationBlock
+        if url.path.hasSuffix("products/search") {
+            result = { operationResult( .successful(MockDataServicesProvider.mockJsonString.data(using: .utf8)!) ) }
+        } else {
+            result = { operationResult( .successful(MockDataServicesProvider.mockProductDetailsJsonString.data(using: .utf8)!) ) }
+        }
+        
+        return result
     }
 }

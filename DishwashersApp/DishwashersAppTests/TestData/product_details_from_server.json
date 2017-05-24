@@ -1,0 +1,372 @@
+{
+    "productId": "1915106",
+    "title": "Siemens SN26M880GB Freestanding Dishwasher, Stainless Steel",
+    "defaultSku": "234326389",
+    "storeOnly": false,
+    "type": "standard",
+    "ageRestriction": 0,
+    "seoURL": "/siemens-sn26m880gb-freestanding-dishwasher-stainless-steel/p1915106",
+    "isFBL": false,
+    "price": {
+        "was": "",
+        "then1": "",
+        "then2": "",
+        "now": "549.00",
+        "uom": "",
+        "currency": "GBP"
+    },
+    "code": "81701603",
+    "specialOffers": {
+        "priceMatched": "",
+        "offer": "",
+        "customPromotionalMessage": "",
+        "bundleHeadline": "",
+        "customSpecialOffer": {
+            "customSpecialOfferId": "9843900015",
+            "imageURL": "",
+            "linkText": "Click here to view terms and conditions and how to claim",
+            "linkURL": "http://www.siemenscustomerservice.co.uk/siemens/siemens-home/Guarantee.aspx",
+            "longDescription": "<p>Save £50 when you trade in your old appliance. Tick the <strong>free disposal</strong> option on the product page and enter <strong>SIEMENSTRADE50</strong>&nbsp;at the end of checkout. Offer ends 23.05.17.</p>\r<p><strong>Terms and conditions</strong></p>\r<p>The offer is only available if the customer agrees to dispose of an appliance he or she already owns by entering the promotional code, and allowing John Lewis or its delivery agents to collect and dispose of their old appliance on delivery of the new one.</p>\r<p>If the customer wishes to return the product, only the discounted price paid will be refunded and the old appliance will not be returned. Also available in John Lewis shops. Offer ends 23.05.17.</p>\r<a href=\"https://www.johnlewis.com/our-services/home-appliance-installation-services#excluded-postcodes\">Postcode restrictions apply</a>\r\r<hr/>\r\r<p>Claim an extra 3 year guarantee (at no extra cost) via online registration.<p/>",
+            "promoImageName": "",
+            "siteDisplayName": "£50 trade in + Claim an extra 3 years guarantee"
+        }
+    },
+    "displaySpecialOffer": "£50 trade in + Claim an extra 3 years guarantee",
+    "setDetails": {},
+    "templateType": "media-epic-prodtemplate",
+    "skus": [{
+             "id": "234326389",
+             "skuTitle": "Siemens SN26M880GB Freestanding Dishwasher, Stainless Steel",
+             "shortSkuTitle": "",
+             "color": "",
+             "size": "",
+             "sizeHeadline": "",
+             "swatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/234326389?cropN=0.42105263157894735,0.42105263157894735,0.16842105263157894,0.16842105263157894&",
+             "availability": {
+             "stockLevel": 260,
+             "availabilityStatus": "INSTOCK",
+             "message": "In stock"
+             },
+             "price": {
+             "was": "",
+             "then1": "",
+             "then2": "",
+             "now": "549.00",
+             "uom": "",
+             "currency": "GBP"
+             },
+             "code": "81701603",
+             "leadTime": "",
+             "d2cDeliveryLeadTime": "",
+             "media": {
+             "images": {
+             "altText": "BuySiemens SN26M880GB Freestanding Dishwasher, Stainless Steel Online at johnlewis.com",
+             "urls": ["//johnlewis.scene7.com/is/image/JohnLewis/234326389?", "//johnlewis.scene7.com/is/image/JohnLewis/234326389alt10?", "//johnlewis.scene7.com/is/image/JohnLewis/234326389alt1?", "//johnlewis.scene7.com/is/image/JohnLewis/234326389alt2?", "//johnlewis.scene7.com/is/image/JohnLewis/234326389alt3?", "//johnlewis.scene7.com/is/image/JohnLewis/234326389alt4?"]
+             },
+             "360images": {
+             "swfUrl": "//johnlewis.scene7.com/is/content/JohnLewis/360-degree-view",
+             "urls": []
+             }
+             },
+             "brandName": "Siemens",
+             "unitPriceInfo": {}
+             }],
+    "priceBands": [],
+    "legs": [],
+    "deliveries": [{
+                   "deliveryType": "UK",
+                   "options": [{
+                               "id": "26",
+                               "price": "0.00",
+                               "currency": "GBP",
+                               "shortDescription": "Delivery from 3 working days (lead time and available delivery slots will vary by postcode)",
+                               "standardDescription": "Delivery from 3 working days (lead time and available delivery slots will vary by postcode)",
+                               "date": "",
+                               "dateMessage": "",
+                               "trialMessage": "",
+                               "isApprovedSupplier": false
+                               }, {
+                               "id": "202",
+                               "price": "19.95",
+                               "currency": "GBP",
+                               "shortDescription": "Express UK Delivery",
+                               "standardDescription": "Next day delivery to selected areas",
+                               "date": "",
+                               "dateMessage": "",
+                               "trialMessage": "",
+                               "isApprovedSupplier": false
+                               }]
+                   }],
+    "deliverySummary": [{
+                        "deliveryType": "UK",
+                        "title": "UK delivery",
+                        "price": "0.00",
+                        "currency": "GBP",
+                        "summary": "Delivery from 3 working days (lead time and available delivery slots will vary by postcode)",
+                        "trialMessage": ""
+                        }],
+    "additionalServices": {
+        "includedServices": ["2 year guarantee included"],
+        "optionalServices": [{
+                             "id": "233568687",
+                             "associatedProductId": "1465506",
+                             "title": "5 years Added Care for your home appliance (includes guarantee period)",
+                             "description": "All electrical products you buy from us are guaranteed for a minimum of 2 years, at no extra cost. With Added Care, you'll enjoy the same benefits for a period of up to 5 years, while also adding further benefits not included in the original guarantee.",
+                             "price": "95.00",
+                             "orderOnSite": 1,
+                             "type": "ADDED_WARRANTY",
+                             "url": "/our-services/more-about-added-care"
+                             }, {
+                             "id": "DMS17",
+                             "associatedProductId": "DMS17",
+                             "title": "Dishwasher Connection",
+                             "description": "£25<p>The charge for this service includes:</p>\n<p><ul>\n<li>Connection of the new appliance to a standard domestic water connection point within 1 metre of the installation location</li>\n<li>Connection of the appliance to an existing 3-pin 13amp electrical point within 1 metre of the installation location (we are unable to connect to a 'hardwired' electricity point)</li>\n<li>Connection of the appliance to an existing waste outlet within 1 metre of the installation location</li>\n<li>A test wash to ensure the appliance is filling and draining correctly\n<li>The removal and disposal of all packaging</li></ul>\n</p>\n<strong>Please note:</strong> we are unable to install a freestanding dishwasher where your current appliance is an integrated dishwasher.",
+                             "price": "25.00",
+                             "orderOnSite": 2,
+                             "type": "DBS",
+                             "url": ""
+                             }, {
+                             "id": "DMS14",
+                             "associatedProductId": "DMS14",
+                             "title": "Dishwasher Disposal",
+                             "description": "<p>The charge for this service includes removal and disposal of your old appliance for reuse or recycling. Before we arrive to collect it, please drain your old appliance, and if you aren't using our installation service for your new machine, disconnect it too.</p>",
+                             "price": "15.00",
+                             "orderOnSite": 3,
+                             "type": "DBS",
+                             "url": ""
+                             }]
+    },
+    "media": {
+        "images": {
+            "altText": "BuySiemens SN26M880GB Freestanding Dishwasher, Stainless Steel Online at johnlewis.com",
+            "urls": ["//johnlewis.scene7.com/is/image/JohnLewis/234326389?", "//johnlewis.scene7.com/is/image/JohnLewis/234326389alt10?", "//johnlewis.scene7.com/is/image/JohnLewis/234326389alt1?", "//johnlewis.scene7.com/is/image/JohnLewis/234326389alt2?", "//johnlewis.scene7.com/is/image/JohnLewis/234326389alt3?", "//johnlewis.scene7.com/is/image/JohnLewis/234326389alt4?"]
+        },
+        "360images": {
+            "swfUrl": "//johnlewis.scene7.com/is/content/JohnLewis/360-degree-view",
+            "urls": []
+        },
+        "videos": {}
+    },
+    "details": {
+        "returns": "<div class=\"par parsys\">\n <div class=\"cms30r section\">\n  <div class=\"free-html\"> \n   <style>#cq-returns-info p a{padding:0;} #cq-returns-info h2{padding:18px 0 16px 0; border-bottom: 1px solid #bfbdb7; font-size: 18px; font-weight: bold;} #cq-returns-info p{padding:0 0 6px;}\n   </style>\n   <div id=\"cq-returns-info\"> \n    <h2>Returns</h2> \n    <p>If you’ve changed your mind about keeping your purchase, please return it in its original condition with proof of purchase and we’ll exchange or refund it. Unless faulty, this should be within 35 days of receiving your order. By original condition, we’d expect this to mean that you’ve kept packaging and labels, and that the item is undamaged and unused.</p> \n    <p>You can return for free in the UK via John Lewis shops, Royal Mail, Collect+ or MyHermes. If you need to arrange collection of large or heavy items, call us on <strong>03456 049 049</strong>. For international returns queries, call us on <strong>+44 1698 545 454</strong></p> \n    <p>You’ll find returns information on your delivery note. Exceptions apply to certain products - <a href=\"/customer-services/information-about-ordering-and-returning-products#refund\">find out more about our refund policy</a></p>\n   </div>\n  </div>\n </div>\n</div>",
+        "returnsHeadline": "<div class=\"par parsys\">\n <div class=\"cms30r section\">\n  <div class=\"free-html\"> \n   <style type=\"text/css\">.free-html a.more-details {   font-weight:normal;}}.returns-info { float:left;}.returns-info h2 {float:left;padding-right:10px;}.returns-info-link { padding:4px 0 15px 0;}\n   </style>\n   <div class=\"returns-info\">\n    <h2><a href=\"#tabinfo-returns\" class=\"tab-link\">Returns -</a></h2>\n    <div class=\"returns-info-link\">\n     <a href=\"#tabinfo-returns\" class=\"more-details \">See more details</a>\n    </div>\n   </div>\n  </div>\n </div>\n</div>",
+        "termsAndConditions": "",
+        "productInformation": "<p>The stainless steel Siemens SN26M880GB dishwasher features a range of options for versatile, fast and hygienic cleaning. A child lock for extra safety and 14 place settings make this machine ideal for family households. The <strong>A++ energy rating</strong> will help you to save money on your energy bills whilst reducing your impact on the environment.</p> <p><strong>VarioFlex basket system</strong><br /> This clever system is designed to cater to all of your cutlery, plates dishes, pots and pans. With top and bottom baskets, which are flexible in their design, you will have ample space no matter what you need to get clean. There&rsquo;s also a 3-stage Rackmatic height-adjustable top basket and a VarioDrawer to give the highest loading capacity.</p> <p><strong>HygienePlus</strong><br /> This option offers antibacterial dishwashing using extra-high temperatures to give the most hygienic clean.</p> <p><strong>VarioSpeed Plus</strong><br /> This function cleans dishes up to 66% faster, whilst providing the best possible cleaning and drying results. This combined with the HydroDry function will leave your dishes with a gleaming shine.</p> <p><strong>dosageAssist</strong><br /> Your detergent will fall into a little dish thanks to dosageAssist, which is then dissolved by a precisely aimed jet of water. The detergent is then scattered throughout your dishwasher, guaranteeing optimum cleaning results.</p>",
+        "features": [{
+                     "groupName": "",
+                     "attributes": [{
+                                    "id": "attr9835051174",
+                                    "name": "Dimensions",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "H84.5 x W60 x D60cm"
+                                    }, {
+                                    "id": "attr9835051179",
+                                    "name": "Number of Programs",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "6"
+                                    }, {
+                                    "id": "attr9835051180",
+                                    "name": "Model name / number",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "SN26M880GB"
+                                    }, {
+                                    "id": "attr9835051181",
+                                    "name": "Drying System",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "Heat Exchanger"
+                                    }, {
+                                    "id": "attr9835051183",
+                                    "name": "Quick wash",
+                                    "toolTip": "Speedy programme when you need items cleaned quickly",
+                                    "uom": "",
+                                    "value": "Yes"
+                                    }, {
+                                    "id": "attr9835051184",
+                                    "name": "Drying performance",
+                                    "toolTip": "Graded on performance A - G, with A being the highest grade",
+                                    "uom": "",
+                                    "value": "A"
+                                    }, {
+                                    "id": "attr9835051186",
+                                    "name": "Overflow protection",
+                                    "toolTip": "An anti-flood device prevents the machine from being damaged by flooding from the inlet pipe",
+                                    "uom": "",
+                                    "value": "YES"
+                                    }, {
+                                    "id": "attr9835051187",
+                                    "name": "Brand",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "Siemens"
+                                    }, {
+                                    "id": "attr9835051188",
+                                    "name": "Dishwasher Size",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "Full"
+                                    }, {
+                                    "id": "attr9835051190",
+                                    "name": "Energy Rating ",
+                                    "toolTip": "Graded on performance, from A+++ to G, with A+++ being the highest rating. Higher ratings mean better energy efficiency",
+                                    "uom": "",
+                                    "value": "A++"
+                                    }, {
+                                    "id": "attr9835051191",
+                                    "name": "Place Settings",
+                                    "toolTip": "A complete set of items provided for one person at a meal  ",
+                                    "uom": "",
+                                    "value": "14"
+                                    }, {
+                                    "id": "attr9835051193",
+                                    "name": "Delay Start",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "Yes"
+                                    }, {
+                                    "id": "attr9835051194",
+                                    "name": "Noise Level",
+                                    "toolTip": "How noisy, in decibels, the machine is. The lower the dB, the quieter the appliance",
+                                    "uom": "",
+                                    "value": "46dB"
+                                    }, {
+                                    "id": "attr9835051195",
+                                    "name": "Estimated Annual Energy Consumption",
+                                    "toolTip": "Typical annual amount used by a 4 person household",
+                                    "uom": "",
+                                    "value": "266kWh"
+                                    }, {
+                                    "id": "attr9835051197",
+                                    "name": "Child lock",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "Door & control lock"
+                                    }, {
+                                    "id": "attr9835051200",
+                                    "name": "Next Day Delivery",
+                                    "toolTip": "We offer next working day delivery of appliances in selected areas. See our delivery information page for conditions ",
+                                    "uom": "",
+                                    "value": "YES"
+                                    }, {
+                                    "id": "attr9835051202",
+                                    "name": "Digital display",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "Yes"
+                                    }, {
+                                    "id": "attr9835051204",
+                                    "name": "Adjustable racking",
+                                    "toolTip": "Lets you move the racking around to fit large or awkward items",
+                                    "uom": "",
+                                    "value": "YES"
+                                    }, {
+                                    "id": "attr9835051205",
+                                    "name": "Delicate Wash",
+                                    "toolTip": "A gentle clean, designed to protect delicate items, such as glasses",
+                                    "uom": "",
+                                    "value": "YES"
+                                    }, {
+                                    "id": "attr9835051206",
+                                    "name": "Energy Consumption Per Standard Cycle",
+                                    "toolTip": "Based on the drying cycle of the standard cotton programme at full load. Actual energy consumption per cycle will depend on how the appliance is used.",
+                                    "uom": "",
+                                    "value": "0.93kWh"
+                                    }, {
+                                    "id": "attr9835051207",
+                                    "name": "Water Consumption Per Standard Cycle",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "9.5L"
+                                    }, {
+                                    "id": "attr9835051208",
+                                    "name": "Time remaining indicator",
+                                    "toolTip": "Tells you how long the programme's got to go",
+                                    "uom": "",
+                                    "value": "Yes"
+                                    }, {
+                                    "id": "attr9835051211",
+                                    "name": "Wash performance",
+                                    "toolTip": "Graded on performance A - G, with A being the highest grade. The higher the grade the more energy efficient the appliance.",
+                                    "uom": "",
+                                    "value": "A"
+                                    }, {
+                                    "id": "attr9835051213",
+                                    "name": "Type",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "Freestanding"
+                                    }, {
+                                    "id": "attr9835051214",
+                                    "name": "Eligible for International Delivery",
+                                    "toolTip": "",
+                                    "uom": "",
+                                    "value": "No"
+                                    }]
+                     }],
+        "careGuide": [],
+        "featuredArticles": [],
+        "editorsNotes": "",
+        "buyingGuides": [{
+                         "title": "Dishwashers Buying Guide",
+                         "image": "//johnlewis.scene7.com/is/image/JohnLewis/electrical_med_icon?",
+                         "linkUrl": "https://www.johnlewis.com/buying-guides/dishwashers-buying-guide",
+                         "linkText": "Dishwashers Buying Guide",
+                         "longDescription": "Wave farewell to the washing up with your new friend in the kitchen"
+                         }],
+        "sizeGuides": []
+    },
+    "setElements": [],
+    "bundleProducts": [],
+    "headingTypes": [],
+    "moreFromRange": [],
+    "promotionalFeatures": [{
+                            "title": "Rated A++ for energy",
+                            "iconUrl": "//johnlewis.scene7.com/is/image/JohnLewis/energy_a_plusplus_ico",
+                            "linkUrl": "http://www.johnlewis.com/buying-guides/energy-efficiency-guide",
+                            "description": "Rated A++ for energy",
+                            "longDescription": ""
+                            }],
+    "setInformation": "",
+    "specialOfferBundles": [],
+    "fixedRelatedProducts": [],
+    "siblingSets": [],
+    "defaultCategory": {
+        "id": "6000047",
+        "name": "Dishwashers"
+    },
+    "releaseDateTimestamp": 0,
+    "crumbs": [{
+               "type": "CATALOGUE",
+               "displayName": "Electricals",
+               "item": "500001",
+               "clickable": "true"
+               }, {
+               "type": "CATALOGUE",
+               "displayName": "Home Appliances-NCH",
+               "item": "1902851",
+               "clickable": "false"
+               }, {
+               "type": "CATALOGUE",
+               "displayName": "Dishwashers",
+               "item": "6000047",
+               "clickable": "true"
+               }],
+    "seoInformation": {
+        "title": "",
+        "description": ""
+    },
+    "isInTopNkuCategory": true,
+    "emailMeWhenAvailable": true,
+    "brand": {
+        "name": "Siemens",
+        "logo": "//johnlewis.scene7.com/is/image/JohnLewis/siemens_brl?"
+    },
+    "madeToMeasureDetails": {
+        "type": "",
+        "styles": ""
+    },
+    "reviewData": []
+}

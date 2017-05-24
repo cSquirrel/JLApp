@@ -10,12 +10,12 @@ import UIKit
 
 class ProductDetailsViewController: UIViewController {
 
-    var selectedProduct: JohnLewisProduct!
+    var selectedProductDetails: JohnLewisProductDetails!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = selectedProduct.title
+        self.title = selectedProductDetails.title
         
     }
 
