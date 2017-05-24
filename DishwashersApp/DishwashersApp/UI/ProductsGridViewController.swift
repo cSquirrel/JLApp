@@ -84,7 +84,10 @@ extension ProductsGridViewController {
         let api = appConfiguration.apiAccess
         api?.getProductDetails(productId: selectedProductId, result: { [unowned self] (productDetails: JohnLewisProductDetails) in
             self.selectedProductDetails = productDetails
-            self.performSegue(withIdentifier: "presentProductDetails", sender: self)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "presentProductDetails", sender: self)
+            }
+            
         })
         
     }
