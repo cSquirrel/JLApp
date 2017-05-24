@@ -30,6 +30,20 @@ class JSONServicesProvider: NetworkServicesProvider {
     
     func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) -> NetworkOperationBlock {
         
-        return { _ in completion(UIImage(named: "image_placeholder")) }
+        return { (session: URLSession) in
+            
+            let dataTask = session.dataTask(with: url, completionHandler: {
+                (responseData: Data?, urlResponse: URLResponse?, responseError: Error?) in
+                
+                if let rData = responseData {
+                    let image = UIImage(data: rData)
+                    DispatchQueue.global(qos:.default).async { completion(image) }
+                } else {
+                    DispatchQueue.global(qos:.default).async { completion(nil) }
+                }
+                
+            })
+            dataTask.resume()
+        }
     }
 }
