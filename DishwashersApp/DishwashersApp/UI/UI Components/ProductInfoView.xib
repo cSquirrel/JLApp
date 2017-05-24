@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductInfoView" customModule="DishwashersApp" customModuleProvider="target">
+            <connections>
+                <outlet property="includedServices" destination="B70-fg-q0V" id="7VH-P6-yLm"/>
+                <outlet property="price" destination="lFq-Qa-1Ue" id="wQr-Fe-MVm"/>
+                <outlet property="specialOffer" destination="Qat-Da-imA" id="dfe-Hn-7Rq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" misplaced="YES" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="222"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£999.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-Qa-1Ue">
+                    <rect key="frame" x="0.0" y="0.0" width="353" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qat-Da-imA">
+                    <rect key="frame" x="0.0" y="33" width="353" height="81.5"/>
+                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et massa fringilla, bibendum erat vitae, venenatis sapien. Suspendisse a risus iaculis, euismod nisi at, convallis massa. </string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B70-fg-q0V">
+                    <rect key="frame" x="0.0" y="126.5" width="353" height="21"/>
+                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et massa fringilla, bibendum erat vitae, venenatis sapien. Suspendisse a risus iaculis, euismod nisi at, convallis massa. </string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Qat-Da-imA" firstAttribute="top" secondItem="lFq-Qa-1Ue" secondAttribute="bottom" constant="12" id="2s4-GB-s9F"/>
+                <constraint firstItem="Qat-Da-imA" firstAttribute="leading" secondItem="lFq-Qa-1Ue" secondAttribute="leading" id="RHj-YA-KHZ"/>
+                <constraint firstItem="B70-fg-q0V" firstAttribute="leading" secondItem="Qat-Da-imA" secondAttribute="leading" id="RRa-yS-uwL"/>
+                <constraint firstItem="lFq-Qa-1Ue" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Su1-px-jiZ"/>
+                <constraint firstItem="Qat-Da-imA" firstAttribute="trailing" secondItem="lFq-Qa-1Ue" secondAttribute="trailing" id="jT1-fs-SHE"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="B70-fg-q0V" secondAttribute="bottom" id="k1p-ft-rZj"/>
+                <constraint firstItem="lFq-Qa-1Ue" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kWk-FY-8Ep"/>
+                <constraint firstItem="B70-fg-q0V" firstAttribute="trailing" secondItem="Qat-Da-imA" secondAttribute="trailing" id="pzM-UK-EGi"/>
+                <constraint firstItem="B70-fg-q0V" firstAttribute="top" secondItem="Qat-Da-imA" secondAttribute="bottom" constant="12" id="qJ3-5X-AEp"/>
+                <constraint firstAttribute="trailing" secondItem="lFq-Qa-1Ue" secondAttribute="trailing" id="uip-nV-rus"/>
+            </constraints>
+            <point key="canvasLocation" x="65.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

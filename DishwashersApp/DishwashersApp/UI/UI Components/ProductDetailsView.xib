@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJV-Kp-Soh">
+                    <rect key="frame" x="0.0" y="0.0" width="644.5" height="768"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjd-l0-70G" customClass="ProductPhotosCarousel" customModule="DishwashersApp" customModuleProvider="target">
+                            <rect key="frame" x="8" y="8" width="628.5" height="419"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="hjd-l0-70G" secondAttribute="height" multiplier="1.5:1" id="T9x-zo-U95"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezI-u0-1x7">
+                            <rect key="frame" x="8" y="435" width="628.5" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Kzy-7J-is0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e17-eM-z1r">
+                            <rect key="frame" x="8" y="464" width="628.5" height="101.5"/>
+                            <string key="text">Product code: 12345678
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et massa fringilla, bibendum erat vitae, venenatis sapien. Suspendisse a risus iaculis, euismod nisi at, convallis massa. Pellentesque eleifend mauris id risus vestibulum, quis egestas leo pretium.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ezI-u0-1x7" firstAttribute="leading" secondItem="DJV-Kp-Soh" secondAttribute="leading" constant="8" id="Hqx-HV-Q5O"/>
+                        <constraint firstItem="ezI-u0-1x7" firstAttribute="top" secondItem="hjd-l0-70G" secondAttribute="bottom" constant="8" id="Jz5-he-ZKn"/>
+                        <constraint firstItem="e17-eM-z1r" firstAttribute="trailing" secondItem="ezI-u0-1x7" secondAttribute="trailing" id="Twf-cU-huU"/>
+                        <constraint firstItem="e17-eM-z1r" firstAttribute="top" secondItem="ezI-u0-1x7" secondAttribute="bottom" constant="8" id="UUy-DF-LRd"/>
+                        <constraint firstItem="hjd-l0-70G" firstAttribute="leading" secondItem="DJV-Kp-Soh" secondAttribute="leading" constant="8" id="a42-1C-3QH"/>
+                        <constraint firstItem="e17-eM-z1r" firstAttribute="leading" secondItem="ezI-u0-1x7" secondAttribute="leading" id="dbE-6z-BFw"/>
+                        <constraint firstAttribute="trailing" secondItem="ezI-u0-1x7" secondAttribute="trailing" constant="8" id="gMN-aw-80I"/>
+                        <constraint firstItem="hjd-l0-70G" firstAttribute="top" secondItem="DJV-Kp-Soh" secondAttribute="top" constant="8" id="qkm-8w-jzs"/>
+                        <constraint firstAttribute="trailing" secondItem="hjd-l0-70G" secondAttribute="trailing" constant="8" id="xNV-s3-I6V"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oQ-hw-SyG">
+                    <rect key="frame" x="644.5" y="0.0" width="379.5" height="768"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtn-4I-LMe" customClass="ProductInfoView" customModule="DishwashersApp" customModuleProvider="target">
+                            <rect key="frame" x="8" y="8" width="363.5" height="752"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="qtn-4I-LMe" secondAttribute="bottom" constant="8" id="F1V-L5-h0R"/>
+                        <constraint firstAttribute="trailing" secondItem="qtn-4I-LMe" secondAttribute="trailing" constant="8" id="GcY-VG-YPD"/>
+                        <constraint firstItem="qtn-4I-LMe" firstAttribute="leading" secondItem="3oQ-hw-SyG" secondAttribute="leading" constant="8" id="Yz2-ae-rqm"/>
+                        <constraint firstItem="qtn-4I-LMe" firstAttribute="top" secondItem="3oQ-hw-SyG" secondAttribute="top" constant="8" id="msS-Pe-KxX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3oQ-hw-SyG" secondAttribute="trailing" id="4jF-14-kdj"/>
+                <constraint firstAttribute="bottom" secondItem="DJV-Kp-Soh" secondAttribute="bottom" id="9ff-Oq-fSi"/>
+                <constraint firstAttribute="bottom" secondItem="3oQ-hw-SyG" secondAttribute="bottom" id="RTf-42-PWZ"/>
+                <constraint firstItem="DJV-Kp-Soh" firstAttribute="width" secondItem="3oQ-hw-SyG" secondAttribute="width" multiplier="1.7" id="aHi-UT-dPM"/>
+                <constraint firstItem="3oQ-hw-SyG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gbs-3k-s9g"/>
+                <constraint firstItem="3oQ-hw-SyG" firstAttribute="leading" secondItem="DJV-Kp-Soh" secondAttribute="trailing" id="lB4-kF-uNe"/>
+                <constraint firstItem="DJV-Kp-Soh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pUP-HO-i0W"/>
+                <constraint firstItem="DJV-Kp-Soh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wdz-YK-M0L"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
