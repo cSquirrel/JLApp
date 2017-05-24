@@ -50,8 +50,13 @@ public class JohnLewisAPI: NSObject {
         
     }
     
+    public typealias ApiError = (_ error: Error?) -> ()
+    
     public typealias GetProductsGridResult = (_ products: [JohnLewisProduct]) -> ()
-    public func getProductsGrid(query:String, searchPageSize: Int, result: @escaping GetProductsGridResult) {
+    public func getProductsGrid(query:String,
+                                searchPageSize: Int,
+                                result: @escaping GetProductsGridResult,
+                                error: @escaping ApiError) {
         
         let result = { (status: NetworkOperationStatus) in
             
@@ -60,6 +65,7 @@ public class JohnLewisAPI: NSObject {
                 let products = JohnLewisProduct.parse(productsAsJsonData: data)
                 result(products)
             case.failed:
+                error(nil)
                 return
             }
         }
@@ -74,7 +80,9 @@ public class JohnLewisAPI: NSObject {
     }
 
     public typealias GetProductDetailsResult = (_ product: JohnLewisProductDetails) -> ()
-    public func getProductDetails(productId:String, result: @escaping GetProductDetailsResult) {
+    public func getProductDetails(productId:String,
+                                  result: @escaping GetProductDetailsResult,
+                                  error: @escaping ApiError) {
      
         let result = { (status: NetworkOperationStatus) in
             
@@ -85,6 +93,7 @@ public class JohnLewisAPI: NSObject {
                 }
                 result(product)
             case.failed:
+                error(nil)
                 return
             }
         }
