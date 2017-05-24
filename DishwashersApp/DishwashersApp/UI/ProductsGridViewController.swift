@@ -47,7 +47,10 @@ extension ProductsGridViewController {
                              result: {[weak self] (p: [JohnLewisProduct]) in
             // TODO: Dismiss spinner
             self?.products = p
-            self?.collectionView?.reloadData()
+            DispatchQueue.main.async {
+                self?.collectionView?.reloadData()
+            }
+            
         })
     }
 }

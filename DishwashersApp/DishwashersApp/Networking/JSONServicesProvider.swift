@@ -12,11 +12,24 @@ class JSONServicesProvider: NetworkServicesProvider {
 
     func createGETOperation(url: URL, operationResult result: @escaping NetworkOperationResult) -> NetworkOperationBlock {
         
-        return { result( .successful(Data()) ) }
+        return { (session: URLSession) in
+            
+            let dataTask = session.dataTask(with: url, completionHandler: {
+                (responseData: Data?, urlResponse: URLResponse?, responseError: Error?) in
+                
+                if let rData = responseData {
+                    DispatchQueue.global(qos:.default).async {result( .successful(rData) )}
+                } else {
+                    DispatchQueue.global(qos:.default).async { result( .failed(responseError) )}
+                }
+                
+            })
+            dataTask.resume()
+        }
     }
     
     func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) -> NetworkOperationBlock {
         
-        return { completion(UIImage(named: "image_placeholder")) }
+        return { _ in completion(UIImage(named: "image_placeholder")) }
     }
 }

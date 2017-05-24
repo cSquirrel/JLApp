@@ -11,11 +11,11 @@ import UIKit
 public enum NetworkOperationStatus {
     
     case successful(Data)
-    case failed(Error)
+    case failed(Error?)
     
 }
 
-public typealias NetworkOperationBlock = () -> ()
+public typealias NetworkOperationBlock = (_ session: URLSession) -> ()
 
 public typealias NetworkOperationResult = (_ result: NetworkOperationStatus) -> Void
 
