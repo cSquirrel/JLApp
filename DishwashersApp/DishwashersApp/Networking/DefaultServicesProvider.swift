@@ -25,7 +25,7 @@ class DefaultServicesProvider: NetworkServicesProvider {
             return { _ in }
         }
         
-        return { (session: URLSession) in
+        return { [weak self] (session: URLSession) in
             
             let dataTask = session.dataTask(with: url, completionHandler: {
                 (responseData: Data?, urlResponse: URLResponse?, responseError: Error?) in
@@ -44,7 +44,7 @@ class DefaultServicesProvider: NetworkServicesProvider {
                 let statusCode = httpUrlResponse.statusCode
                 switch statusCode {
                     case 200 ... 299:
-                        self.jsonCache?.setObject(rData as NSData, forKey: url as NSURL)
+                        self?.jsonCache?.setObject(rData as NSData, forKey: url as NSURL)
                         resultBlock = {result( .successful(rData) )}
                     default:
                         resultBlock = {result( .failed(responseError) )}
@@ -64,7 +64,7 @@ class DefaultServicesProvider: NetworkServicesProvider {
             return { _ in }
         }
         
-        return { [unowned self] (session: URLSession) in
+        return { [weak self] (session: URLSession) in
             
             let dataTask = session.dataTask(with: url, completionHandler: {
                 (responseData: Data?, urlResponse: URLResponse?, responseError: Error?) in
@@ -72,7 +72,7 @@ class DefaultServicesProvider: NetworkServicesProvider {
                 if let rData = responseData {
                     let image = UIImage(data: rData)
                     if image != nil {
-                        self.imageCache?.setObject(image!, forKey: url as NSURL)
+                        self?.imageCache?.setObject(image!, forKey: url as NSURL)
                     }
                     DispatchQueue.global(qos:.default).async { completion(image) }
                 } else {

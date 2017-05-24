@@ -71,9 +71,9 @@ extension ProductsGridViewController {
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
-        DispatchQueue.main.async { [unowned self] in
-            self.spinnerView.hide()
-            self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async { [weak self] in
+            self?.spinnerView.hide()
+            self?.present(alert, animated: true, completion: nil)
         }
 
     }
@@ -118,13 +118,16 @@ extension ProductsGridViewController {
         
         let api = appConfiguration.apiAccess
         spinnerView.show(inView: self.view)
-        api?.getProductDetails(productId: selectedProductId, result: { [unowned self] (productDetails: JohnLewisProductDetails?) in
+        api?.getProductDetails(productId: selectedProductId, result: { [weak self] (productDetails: JohnLewisProductDetails?) in
             
-            self.selectedProductDetails = productDetails
+            guard let s = self else {
+                return
+            }
+            s.selectedProductDetails = productDetails
             DispatchQueue.main.async {
                 
-                self.spinnerView.hide()
-                self.performSegue(withIdentifier: "presentProductDetails", sender: self)
+                s.spinnerView.hide()
+                s.performSegue(withIdentifier: "presentProductDetails", sender: self)
             }
         }, error: showApiError)
         
