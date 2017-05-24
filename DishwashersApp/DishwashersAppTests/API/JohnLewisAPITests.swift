@@ -14,7 +14,7 @@ class JohnLewisAPIConfigTests: XCTestCase {
     func testCreateEndpointURL() {
         
         // prepare
-        let baseURL = URL(string:"http/bbc.co.uk/api/")!
+        let baseURL = URL(string:"http://bbc.co.uk/api/")!
         let config = JohnLewisAPIConfig(networkProvider: MockNetworkServicesProvider(),
                                         networkExecutor: MockNetworkOperationsExecutor(),
                                         baseURL: baseURL,
@@ -24,7 +24,33 @@ class JohnLewisAPIConfigTests: XCTestCase {
         let result = config.createEndpointURL(servicePath: "service/path")
         
         // verify
-        XCTAssertEqual(result.absoluteString, "http/bbc.co.uk/api/service/path")
+        let components = URLComponents.init(url: result, resolvingAgainstBaseURL: false)
+        XCTAssertEqual(components?.host, "bbc.co.uk")
+        XCTAssertEqual(components?.scheme, "http")
+        XCTAssertEqual(components?.path, "/api/service/path")
+        XCTAssertNil(components?.queryItems)
+    }
+    
+    func testCreateEndpointURL_WithQueryParams() {
+        
+        // prepare
+        let baseURL = URL(string:"http://bbc.co.uk/api/")!
+        let config = JohnLewisAPIConfig(networkProvider: MockNetworkServicesProvider(),
+                                        networkExecutor: MockNetworkOperationsExecutor(),
+                                        baseURL: baseURL,
+                                        apiKey: "dummy_key")
+        
+        // execute
+        let result = config.createEndpointURL(servicePath: "service/path", queryParams:["key1":"value1",
+                                                                                        "key2":"value2"])
+        
+        // verify
+        let components = URLComponents.init(url: result, resolvingAgainstBaseURL: false)
+        XCTAssertEqual(components?.host, "bbc.co.uk")
+        XCTAssertEqual(components?.scheme, "http")
+        XCTAssertEqual(components?.path, "/api/service/path")
+        XCTAssertEqual(components?.queryItems?.count, 2)
+        
     }
 }
 

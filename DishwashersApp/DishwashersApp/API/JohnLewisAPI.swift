@@ -15,10 +15,16 @@ struct JohnLewisAPIConfig {
     let baseURL: URL
     let apiKey: String
     
-    public func createEndpointURL(servicePath: String) -> URL {
+    public func createEndpointURL(servicePath: String, queryParams: [String:String]? = nil) -> URL {
         
         var result = URL(string:baseURL.absoluteString)!
         result.appendPathComponent(servicePath)
+        if let query = queryParams {
+            let queryParamsString = query.map({ return "\($0)=\($1)" }).joined(separator: "&")
+            var components = URLComponents(url: result, resolvingAgainstBaseURL: true)!
+            components.query = queryParamsString
+            result = components.url!
+        }
         return result
     }
     

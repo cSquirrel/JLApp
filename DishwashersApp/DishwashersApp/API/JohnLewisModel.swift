@@ -12,14 +12,15 @@ fileprivate func ReadSafeJSONUrl(string: String) -> URL? {
     
     let result: URL?
     
-    let safeURLString: String
-    if(!string.hasPrefix("http")) {
-        safeURLString = "http:\(string)"
-    } else {
-        safeURLString = string
+    guard var urlComponents = URLComponents(string: string) else {
+        return nil
     }
     
-    result = URL(string: safeURLString)
+    if (urlComponents.scheme == nil) {
+        urlComponents.scheme = "http"
+    }
+    
+    result = urlComponents.url
     return result
 }
 
