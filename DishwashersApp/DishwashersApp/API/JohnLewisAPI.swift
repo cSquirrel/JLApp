@@ -32,6 +32,12 @@ struct JohnLewisAPIConfig {
 
 public class JohnLewisAPI: NSObject {
 
+    enum Const {
+        static let apiKeyQueryParam = "key"
+        static let searchQueryParam = "q"
+        static let pageSizeQueryParam = "pageSize"
+    }
+    
     private let config: JohnLewisAPIConfig
     
     init(_ c: JohnLewisAPIConfig) {
@@ -41,7 +47,7 @@ public class JohnLewisAPI: NSObject {
     }
     
     public typealias GetProductsGridResult = (_ products: [JohnLewisProduct]) -> ()
-    public func getProductsGrid(query:String, result: @escaping GetProductsGridResult) {
+    public func getProductsGrid(query:String, searchPageSize: Int, result: @escaping GetProductsGridResult) {
         
         let result = { (status: NetworkOperationStatus) in
             
@@ -54,7 +60,10 @@ public class JohnLewisAPI: NSObject {
             }
         }
         
-        let endpointURL = config.createEndpointURL(servicePath: "products/search")
+        let queryParams = [Const.searchQueryParam:query,
+                           Const.apiKeyQueryParam:config.apiKey,
+                           Const.pageSizeQueryParam:String(searchPageSize)]
+        let endpointURL = config.createEndpointURL(servicePath: "products/search", queryParams: queryParams)
         let getProductsOp = config.networkProvider.createGETOperation(url: endpointURL, operationResult: result)
         config.networkExecutor.execute(operation: getProductsOp)
         
@@ -76,7 +85,8 @@ public class JohnLewisAPI: NSObject {
             }
         }
         
-        let endpointURL = config.createEndpointURL(servicePath: "products/\(productId)")
+        let queryParams = [Const.apiKeyQueryParam:config.apiKey]
+        let endpointURL = config.createEndpointURL(servicePath: "products/\(productId)", queryParams: queryParams)
         let getProductsOp = config.networkProvider.createGETOperation(url: endpointURL, operationResult: result)
         config.networkExecutor.execute(operation: getProductsOp)
     }

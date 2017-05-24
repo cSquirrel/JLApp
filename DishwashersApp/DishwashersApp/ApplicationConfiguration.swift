@@ -16,7 +16,7 @@ import UIKit
 typealias ImagesProvider = (_ url: URL, _ completion: @escaping (UIImage?) -> Void) -> ()
 
 class ApplicationConfiguration: NSObject {
-
+    
     private(set) var apiAccess: JohnLewisAPI!
     private(set) var imagesProvider: ImagesProvider!
     
@@ -33,8 +33,7 @@ class ApplicationConfiguration: NSObject {
         let apiConfig = JohnLewisAPIConfig(networkProvider: networkProvider,
                                            networkExecutor: networkExecutor,
                                            baseURL: baseURL,
-                                           apiKey:
-            apiKey)
+                                           apiKey: apiKey)
         apiAccess = JohnLewisAPI(apiConfig)
         
         imagesProvider = { (url: URL, completion: @escaping (UIImage?) -> Void) -> () in

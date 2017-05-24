@@ -12,10 +12,23 @@ import UIKit
 class MockNetworkServicesProvider: NetworkServicesProvider {
 
     var mockDataToReturn = Data()
+    var lastRequestedURL: URL?
     
-    func createGETOperation(url: URL, result: @escaping NetworkOperationResult) -> NetworkOperationBlock {
+    func createGETOperation(url: URL, operationResult result: @escaping NetworkOperationResult) -> NetworkOperationBlock {
         
-        return { [unowned self] in result( .successful(self.mockDataToReturn) ) }
+        return { [unowned self] _ in
+            self.lastRequestedURL = url
+            result( .successful(self.mockDataToReturn) )
+        }
+    }
+    
+    func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) -> NetworkOperationBlock {
+        
+        return { [unowned self] _ in
+            self.lastRequestedURL = url
+            completion(nil)
+        }
+        
     }
     
 }

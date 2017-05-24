@@ -66,7 +66,7 @@ class JohnLewisAPITests: XCTestCase {
         let e = MockNetworkOperationsExecutor()
         let config = JohnLewisAPIConfig(networkProvider: networkServicesProvider,
                                         networkExecutor: e,
-                                        baseURL: URL(string:"http://bbc.co.uk")!,
+                                        baseURL: URL(string:"http://bbc.co.uk/api")!,
                                         apiKey: "dummy_key")
         api = JohnLewisAPI(config)
     }
@@ -90,11 +90,42 @@ class JohnLewisAPITests: XCTestCase {
         }
         
         // execute
-        api.getProductsGrid(query: "mock_query", result:result)
+        api.getProductsGrid(query: "mock_query", searchPageSize: 20, result:result)
         wait(for: [shouldReturnProducts], timeout: 2)
         
         // verify
         XCTAssertEqual(returnedProducts.count, 20)
+    }
+    
+    func testGetProductsGrid_RequestedURL() {
+        
+        // prepare
+        let jsonData = TestUtils.loadJSONData(fileName: "products_from_server")!
+        networkServicesProvider.mockDataToReturn = jsonData
+        
+        let shouldReturnProducts = expectation(description: "Should return products")
+        let result:JohnLewisAPI.GetProductsGridResult = {(prods: [JohnLewisProduct]) in
+            shouldReturnProducts.fulfill()
+        }
+        
+        // execute
+        api.getProductsGrid(query: "mock_query", searchPageSize: 20, result:result)
+        wait(for: [shouldReturnProducts], timeout: 2)
+        
+        // verify
+        let requestedURL = networkServicesProvider.lastRequestedURL
+        XCTAssertNotNil(requestedURL)
+        let components = URLComponents(url: requestedURL!, resolvingAgainstBaseURL: false)
+        XCTAssertEqual(components?.host, "bbc.co.uk")
+        XCTAssertEqual(components?.scheme, "http")
+        XCTAssertEqual(components?.path, "/api/products/search")
+        XCTAssertEqual(components?.queryItems?.count, 3)
+        
+        var queryParams:[String:String] = [:]
+        components!.queryItems!.forEach { queryParams[$0.name] = $0.value }
+        XCTAssertEqual(queryParams["key"], "dummy_key")
+        XCTAssertEqual(queryParams["q"], "mock_query")
+        XCTAssertEqual(queryParams["pageSize"], "20")
     }
     
     func testGetProductDetails() {
@@ -117,6 +148,36 @@ class JohnLewisAPITests: XCTestCase {
         
         // verify
         XCTAssertNotNil(returnedProduct)
+    }
+    
+    func testGetProductDetails_RequestedURL() {
+        
+        // prepare
+        let jsonData = TestUtils.loadJSONData(fileName: "product_details_from_server")!
+        networkServicesProvider.mockDataToReturn = jsonData
+        
+        let shouldReturnProductDetails = expectation(description: "Should return product details")
+        let productId = "123"
+        let result:JohnLewisAPI.GetProductDetailsResult = {(prod: JohnLewisProductDetails) in
+            shouldReturnProductDetails.fulfill()
+        }
+        
+        // execute
+        api.getProductDetails(productId: productId, result: result)
+        wait(for: [shouldReturnProductDetails], timeout: 2)
+        
+        // verify
+        let requestedURL = networkServicesProvider.lastRequestedURL
+        XCTAssertNotNil(requestedURL)
+        let components = URLComponents(url: requestedURL!, resolvingAgainstBaseURL: false)
+        XCTAssertEqual(components?.host, "bbc.co.uk")
+        XCTAssertEqual(components?.scheme, "http")
+        XCTAssertEqual(components?.path, "/api/products/123")
+        XCTAssertEqual(components?.queryItems?.count, 1)
+        
+        var queryParams:[String:String] = [:]
+        components!.queryItems!.forEach { queryParams[$0.name] = $0.value }
+        XCTAssertEqual(queryParams["key"], "dummy_key")
     }
     
 }
