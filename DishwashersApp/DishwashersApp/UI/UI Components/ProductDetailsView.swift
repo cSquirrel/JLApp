@@ -13,17 +13,23 @@ import UIKit
     @IBOutlet weak var photosCarousel: ProductPhotosCarousel!
     @IBOutlet weak var productInfoView: ProductInfoView!
     @IBOutlet weak var productInfoLabel: UILabel!
-    
-    var selectedProductDetails: JohnLewisProductDetails! {
+
+    var imageProvider:ImagesProvider?
+    var selectedProductDetails: JohnLewisProductDetails? {
         didSet {
-            updateView()
+            guard let details = selectedProductDetails else {
+                return
+            }
+            updateView(productDetails: details)
         }
     }
     
-    private func updateView() {
+    private func updateView(productDetails: JohnLewisProductDetails) {
         
-        let productImages = selectedProductDetails.imageURLs
-        photosCarousel.loadImages(productImages, withImageLoader:NSObject())
+        if let imgProvider = imageProvider {
+            let productImages = productDetails.imageURLs
+            photosCarousel.loadImages(productImages, withImagesProvider:imgProvider)
+        }
         
         //
         // NOTE: Price formatting deserves own formatter.
@@ -31,14 +37,14 @@ import UIKit
         // If the price read from the API would be equipped with al the attributes 
         // it would be worth to have a designated "Price" model object and
         // PriceFormatter class which would format the price according to the value and currency code
-        productInfoView.price.text = "£\(selectedProductDetails.price)"
+        productInfoView.price.text = "£\(productDetails.price)"
         
-        productInfoView.specialOffer.text = selectedProductDetails.displaySpecialOffer ?? ""
+        productInfoView.specialOffer.text = productDetails.displaySpecialOffer ?? ""
         
-        let includedServices = selectedProductDetails.includedServices.joined(separator: "\n")
+        let includedServices = productDetails.includedServices.joined(separator: "\n")
         productInfoView.includedServices.text = includedServices
         
-        let productInfo = "Product code: \(selectedProductDetails.code)\n\(selectedProductDetails.productInformation)"
+        let productInfo = "Product code: \(productDetails.code)\n\(productDetails.productInformation)"
         productInfoLabel.text = productInfo
     }
     

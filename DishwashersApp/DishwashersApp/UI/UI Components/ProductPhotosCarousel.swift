@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class ProductPhotosCarousel: DesignableView {
 
-    func loadImages(_ productImages: [URL], withImageLoader:Any) {
-        // TODO: Load images
+    func loadImages(_ productImages: [URL], withImagesProvider: ImagesProvider) {
+        // TODO: Load and display images with help of image provider
     }
 }

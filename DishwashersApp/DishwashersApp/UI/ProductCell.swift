@@ -20,8 +20,15 @@ class ProductCell: UICollectionViewCell {
 
 extension ProductCell {
     
-    func update(withProduct product: JohnLewisProduct) {
+    func update(withProduct product: JohnLewisProduct, imagesProvider: ImagesProvider) {
         
+        let imageURL = product.imageURL
+        imagesProvider(imageURL, { [weak self] (loadedImage: UIImage?) in
+            guard let li = loadedImage else {
+                return
+            }
+            self?.image.image = li
+        })
         image.image = UIImage(named: "image_placeholder")
         productDescription.text = product.title
         price.text = product.price

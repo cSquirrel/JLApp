@@ -23,4 +23,5 @@ public protocol NetworkServicesProvider {
 
     func createGETOperation(url: URL, operationResult: @escaping NetworkOperationResult) -> NetworkOperationBlock
     
+    func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) -> NetworkOperationBlock
 }

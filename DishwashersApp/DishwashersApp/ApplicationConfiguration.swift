@@ -8,9 +8,17 @@
 
 import UIKit
 
+/**
+ * The reason why images provider does not belong to the networking layer is
+ * that although images can be provided through network layer, they may also be provided
+ * in any other way ( cache, local file ).
+ */
+typealias ImagesProvider = (_ url: URL, _ completion: @escaping (UIImage?) -> Void) -> ()
+
 class ApplicationConfiguration: NSObject {
 
     private(set) var apiAccess: JohnLewisAPI!
+    private(set) var imagesProvider: ImagesProvider!
     
     override func awakeFromNib() {
         createApiAccess()
@@ -28,6 +36,11 @@ class ApplicationConfiguration: NSObject {
                                            apiKey:
             apiKey)
         apiAccess = JohnLewisAPI(apiConfig)
+        
+        imagesProvider = { (url: URL, completion: @escaping (UIImage?) -> Void) -> () in
+            let fetchImageOperation = networkProvider.fetchImage(url: url, completion: completion)
+            networkExecutor.execute(operation: fetchImageOperation)
+        }
     }
 }
 
@@ -52,5 +65,9 @@ fileprivate class MockDataServicesProvider: NetworkServicesProvider {
         }
         
         return result
+    }
+    
+    func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) -> NetworkOperationBlock {
+        return { completion(UIImage(named:"image_placeholder"))}
     }
 }

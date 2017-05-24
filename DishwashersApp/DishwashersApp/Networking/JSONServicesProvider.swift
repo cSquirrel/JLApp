@@ -14,4 +14,9 @@ class JSONServicesProvider: NetworkServicesProvider {
         
         return { result( .successful(Data()) ) }
     }
+    
+    func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) -> NetworkOperationBlock {
+        
+        return { completion(UIImage(named: "image_placeholder")) }
+    }
 }

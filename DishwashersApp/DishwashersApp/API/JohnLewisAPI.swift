@@ -74,4 +74,5 @@ public class JohnLewisAPI: NSObject {
         let getProductsOp = config.networkProvider.createGETOperation(url: endpointURL, operationResult: result)
         config.networkExecutor.execute(operation: getProductsOp)
     }
+
 }

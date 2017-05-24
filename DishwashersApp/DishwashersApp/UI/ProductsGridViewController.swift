@@ -55,7 +55,7 @@ extension ProductsGridViewController {
         
         let product = products[indexPath.item]
         let result = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.reuseIdentifier, for: indexPath) as! ProductCell
-        result.update(withProduct: product)
+        result.update(withProduct: product, imagesProvider: appConfiguration.imagesProvider)
         return result
     }
 
