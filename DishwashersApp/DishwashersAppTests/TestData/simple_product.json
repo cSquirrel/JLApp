@@ -2,7 +2,7 @@
     "productId": "ProductId",
     "title": "Product Title",
     "price": {
-        "now": "549.00",
+        "now": "549.00"
     },
     "code": "ProductCode",
     "displaySpecialOffer": "Extra 3 years guarantee",
