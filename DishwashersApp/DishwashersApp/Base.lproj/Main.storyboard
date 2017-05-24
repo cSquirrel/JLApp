@@ -31,7 +31,7 @@
         <scene sceneID="8IN-s0-7bn">
             <objects>
                 <collectionViewController title="Dishwashers" id="r28-kJ-GgG" customClass="ProductsGridViewController" customModule="DishwashersApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="TyE-Ls-yj4">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TyE-Ls-yj4">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -122,12 +122,27 @@
                     <view key="view" contentMode="scaleToFill" id="QWu-Rg-UQy">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUj-0o-bc4" customClass="ProductDetailsView" customModule="DishwashersApp" customModuleProvider="target">
+                                <rect key="frame" x="8" y="72" width="1008" height="688"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rZn-Nd-chu" firstAttribute="top" secondItem="BUj-0o-bc4" secondAttribute="bottom" constant="8" id="PsH-wC-CWI"/>
+                            <constraint firstItem="BUj-0o-bc4" firstAttribute="top" secondItem="mlw-08-oLP" secondAttribute="bottom" constant="8" id="YVZ-W4-aXa"/>
+                            <constraint firstItem="BUj-0o-bc4" firstAttribute="leading" secondItem="QWu-Rg-UQy" secondAttribute="leading" constant="8" id="rLS-zk-AaB"/>
+                            <constraint firstAttribute="trailing" secondItem="BUj-0o-bc4" secondAttribute="trailing" constant="8" id="sPp-7j-QH7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="productDetailsView" destination="BUj-0o-bc4" id="Ox5-4u-5kn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLP-Bj-cMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="545"/>
+            <point key="canvasLocation" x="771.6796875" y="544.53125"/>
         </scene>
     </scenes>
     <resources>

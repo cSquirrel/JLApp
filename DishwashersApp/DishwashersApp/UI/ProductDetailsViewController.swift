@@ -12,11 +12,13 @@ class ProductDetailsViewController: UIViewController {
 
     var selectedProductDetails: JohnLewisProductDetails!
     
+    @IBOutlet weak var productDetailsView: ProductDetailsView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = selectedProductDetails.title
-        
+        productDetailsView.selectedProductDetails = selectedProductDetails
     }
 
 
