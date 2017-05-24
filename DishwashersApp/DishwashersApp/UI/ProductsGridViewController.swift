@@ -24,7 +24,7 @@ class ProductsGridViewController: UICollectionViewController {
     // this could be an initial screen downloading additional settings from server
     @IBOutlet var appConfiguration: ApplicationConfiguration!
     
-    fileprivate var products:[JohnLewisProduct] = []
+    fileprivate var products:[JohnLewisProduct]?
     fileprivate let defaultQueryString = "dishwashers"
     
     var selectedProductDetails:JohnLewisProductDetails?
@@ -34,14 +34,19 @@ extension ProductsGridViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        reloadData()
+        loadData()
     }
 
 }
 
 extension ProductsGridViewController {
     
-    func reloadData() {
+    func loadData() {
+        
+        // No need to load data if products are already there
+        if products != nil {
+            return
+        }
         
         // TODO: Display spinner
         let api = appConfiguration.apiAccess
@@ -62,13 +67,21 @@ extension ProductsGridViewController {
 extension ProductsGridViewController {
     
     public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products.count
+        guard let p = products else {
+            return 0
+        }
+        
+        return p.count
     }
     
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let product = products[indexPath.item]
         let result = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.reuseIdentifier, for: indexPath) as! ProductCell
+        guard let p = products else {
+            return result
+        }
+        
+        let product = p[indexPath.item]
         result.update(withProduct: product, imagesProvider: appConfiguration.imagesProvider)
         return result
     }
@@ -80,8 +93,12 @@ extension ProductsGridViewController {
     
     public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
+        guard let p = products else {
+            return
+        }
+        
         let itemIndex = indexPath.item
-        let selectedProductId = products[itemIndex].productId
+        let selectedProductId = p[itemIndex].productId
         
         let api = appConfiguration.apiAccess
         api?.getProductDetails(productId: selectedProductId, result: { [unowned self] (productDetails: JohnLewisProductDetails) in
