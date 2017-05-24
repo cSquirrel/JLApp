@@ -27,7 +27,8 @@ class ProductsGridViewController: UICollectionViewController {
     fileprivate var products:[JohnLewisProduct]?
     fileprivate let defaultQueryString = "dishwashers"
     
-    var selectedProductDetails:JohnLewisProductDetails?
+    fileprivate var selectedProductDetails:JohnLewisProductDetails?
+    fileprivate let spinnerView = LoadingSpinnerView()
 }
 
 extension ProductsGridViewController {
@@ -48,14 +49,15 @@ extension ProductsGridViewController {
             return
         }
         
-        // TODO: Display spinner
+        spinnerView.show(inView: self.view)
         let api = appConfiguration.apiAccess
         api?.getProductsGrid(query: defaultQueryString,
                              searchPageSize: Const.defaultSearchPageSize,
                              result: {[weak self] (p: [JohnLewisProduct]) in
-            // TODO: Dismiss spinner
+
             self?.products = p
             DispatchQueue.main.async {
+                self?.spinnerView.hide()
                 self?.collectionView?.reloadData()
             }
             
@@ -101,9 +103,11 @@ extension ProductsGridViewController {
         let selectedProductId = p[itemIndex].productId
         
         let api = appConfiguration.apiAccess
+        spinnerView.show(inView: self.view)
         api?.getProductDetails(productId: selectedProductId, result: { [unowned self] (productDetails: JohnLewisProductDetails) in
             self.selectedProductDetails = productDetails
             DispatchQueue.main.async {
+                self.spinnerView.hide()
                 self.performSegue(withIdentifier: "presentProductDetails", sender: self)
             }
         })
