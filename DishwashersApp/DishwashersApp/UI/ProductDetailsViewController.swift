@@ -10,16 +10,19 @@ import UIKit
 
 class ProductDetailsViewController: UIViewController {
 
-    var selectedProductDetails: JohnLewisProductDetails!
+    var productDetails: JohnLewisProductDetails!
     var imagesProvider:ImagesProvider?
     
     @IBOutlet weak var productDetailsView: ProductDetailsView!
+}
+
+extension ProductDetailsViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = selectedProductDetails.title
-        productDetailsView.updateView(productDetails: selectedProductDetails, imagesProvider: imagesProvider)
+        self.title = productDetails.title
+        productDetailsView.updateView(productDetails: productDetails, imagesProvider: imagesProvider)
     }
 
 

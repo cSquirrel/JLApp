@@ -16,22 +16,25 @@ class ProductsGridViewController: UICollectionViewController {
         static let defaultSearchPageSize = 20
     }
     
+    // NOTE:
+    // Application configuration is injected by Interface Builder
+    // This is good enough for this excercise.
+    //
+    // In long term there would be an entity responsible for creating and providing the configuration
+    // this could be an initial screen downloading additional settings from server
     @IBOutlet var appConfiguration: ApplicationConfiguration!
     
     fileprivate var products:[JohnLewisProduct] = []
     fileprivate let defaultQueryString = "dishwashers"
     
     var selectedProductDetails:JohnLewisProductDetails?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+}
 
+extension ProductsGridViewController {
+    
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         reloadData()
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
 }
@@ -80,14 +83,12 @@ extension ProductsGridViewController {
         let itemIndex = indexPath.item
         let selectedProductId = products[itemIndex].productId
         
-        // TODO: fetch product details
         let api = appConfiguration.apiAccess
         api?.getProductDetails(productId: selectedProductId, result: { [unowned self] (productDetails: JohnLewisProductDetails) in
             self.selectedProductDetails = productDetails
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "presentProductDetails", sender: self)
             }
-            
         })
         
     }
@@ -100,7 +101,7 @@ extension ProductsGridViewController {
             return
         }
         
-        productDetails.selectedProductDetails = product
+        productDetails.productDetails = product
         productDetails.imagesProvider = appConfiguration.imagesProvider
         
     }

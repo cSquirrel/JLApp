@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JSONServicesProvider: NetworkServicesProvider {
+class DefaultServicesProvider: NetworkServicesProvider {
 
     func createGETOperation(url: URL, operationResult result: @escaping NetworkOperationResult) -> NetworkOperationBlock {
         

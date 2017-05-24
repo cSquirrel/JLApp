@@ -12,6 +12,10 @@ import UIKit
 
     @IBOutlet weak var productImageView: UIImageView!
     
+}
+
+extension ProductPhotosCarousel {
+    
     func loadImages(_ productImages: [URL], withImagesProvider imageProvider: ImagesProvider) {
         
         guard let firstImageURL = productImages.first else {

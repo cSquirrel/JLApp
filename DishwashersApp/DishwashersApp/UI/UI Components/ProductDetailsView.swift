@@ -13,7 +13,10 @@ import UIKit
     @IBOutlet weak var photosCarousel: ProductPhotosCarousel!
     @IBOutlet weak var productInfoView: ProductInfoView!
     @IBOutlet weak var productInfoLabel: UILabel!
+}
 
+extension ProductDetailsView {
+    
     func updateView(productDetails: JohnLewisProductDetails, imagesProvider:ImagesProvider?) {
         
         if let imgProvider = imagesProvider {
