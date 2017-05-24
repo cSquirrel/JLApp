@@ -12,6 +12,10 @@ import UIKit
 
     @IBOutlet weak var productImageView: UIImageView!
     
+}
+
+extension ProductPhotosCarousel {
+    
     func loadImages(_ productImages: [URL], withImagesProvider imageProvider: ImagesProvider) {
         
         guard let firstImageURL = productImages.first else {
@@ -24,7 +28,8 @@ import UIKit
                 return
             }
             DispatchQueue.main.async { [unowned self] in
-                self.productImageView.image = img
+                // Use the method from extension to reduce memory footprint
+                self.productImageView.setImage(img)
             }
         }
     }

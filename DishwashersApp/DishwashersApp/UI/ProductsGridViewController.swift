@@ -16,29 +16,37 @@ class ProductsGridViewController: UICollectionViewController {
         static let defaultSearchPageSize = 20
     }
     
+    // NOTE:
+    // Application configuration is injected by Interface Builder
+    // This is good enough for this excercise.
+    //
+    // In long term there would be an entity responsible for creating and providing the configuration
+    // this could be an initial screen downloading additional settings from server
     @IBOutlet var appConfiguration: ApplicationConfiguration!
     
-    fileprivate var products:[JohnLewisProduct] = []
+    fileprivate var products:[JohnLewisProduct]?
     fileprivate let defaultQueryString = "dishwashers"
     
     var selectedProductDetails:JohnLewisProductDetails?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+}
 
+extension ProductsGridViewController {
+    
     override func viewDidAppear(_ animated: Bool) {
-        reloadData()
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        super.viewDidAppear(animated)
+        loadData()
     }
 
 }
 
 extension ProductsGridViewController {
     
-    func reloadData() {
+    func loadData() {
+        
+        // No need to load data if products are already there
+        if products != nil {
+            return
+        }
         
         // TODO: Display spinner
         let api = appConfiguration.apiAccess
@@ -59,13 +67,21 @@ extension ProductsGridViewController {
 extension ProductsGridViewController {
     
     public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products.count
+        guard let p = products else {
+            return 0
+        }
+        
+        return p.count
     }
     
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let product = products[indexPath.item]
         let result = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.reuseIdentifier, for: indexPath) as! ProductCell
+        guard let p = products else {
+            return result
+        }
+        
+        let product = p[indexPath.item]
         result.update(withProduct: product, imagesProvider: appConfiguration.imagesProvider)
         return result
     }
@@ -77,17 +93,19 @@ extension ProductsGridViewController {
     
     public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
-        let itemIndex = indexPath.item
-        let selectedProductId = products[itemIndex].productId
+        guard let p = products else {
+            return
+        }
         
-        // TODO: fetch product details
+        let itemIndex = indexPath.item
+        let selectedProductId = p[itemIndex].productId
+        
         let api = appConfiguration.apiAccess
         api?.getProductDetails(productId: selectedProductId, result: { [unowned self] (productDetails: JohnLewisProductDetails) in
             self.selectedProductDetails = productDetails
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "presentProductDetails", sender: self)
             }
-            
         })
         
     }
@@ -100,7 +118,7 @@ extension ProductsGridViewController {
             return
         }
         
-        productDetails.selectedProductDetails = product
+        productDetails.productDetails = product
         productDetails.imagesProvider = appConfiguration.imagesProvider
         
     }

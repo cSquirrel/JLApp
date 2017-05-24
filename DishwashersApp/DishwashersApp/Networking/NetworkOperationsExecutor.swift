@@ -14,11 +14,7 @@ public protocol NetworkOperationsExecutor {
     
 }
 
-public func CreateHttpExecutor(configuration: URLSessionConfiguration) -> NetworkOperationsExecutor {
-    return HTTPNetworkOperationsExecutor(configuration: configuration)
-}
-
-fileprivate class HTTPNetworkOperationsExecutor: NetworkOperationsExecutor {
+public class DefaultNetworkOperationsExecutor: NetworkOperationsExecutor {
 
     let session: URLSession
     
