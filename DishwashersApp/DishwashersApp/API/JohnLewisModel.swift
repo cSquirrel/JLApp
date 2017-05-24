@@ -17,7 +17,7 @@ fileprivate func ReadSafeJSONUrl(string: String) -> URL? {
     }
     
     if (urlComponents.scheme == nil) {
-        urlComponents.scheme = "http"
+        urlComponents.scheme = "https"
     }
     
     result = urlComponents.url
