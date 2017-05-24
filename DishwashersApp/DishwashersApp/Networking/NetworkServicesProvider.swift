@@ -21,6 +21,6 @@ public typealias NetworkOperationResult = (_ result: NetworkOperationStatus) -> 
 
 public protocol NetworkServicesProvider {
 
-    func createGETOperation(url: URL, result: @escaping NetworkOperationResult) -> NetworkOperationBlock
+    func createGETOperation(url: URL, operationResult: @escaping NetworkOperationResult) -> NetworkOperationBlock
     
 }

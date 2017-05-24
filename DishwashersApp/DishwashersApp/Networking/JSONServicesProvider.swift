@@ -10,7 +10,7 @@ import UIKit
 
 class JSONServicesProvider: NetworkServicesProvider {
 
-    func createGETOperation(url: URL, result: @escaping NetworkOperationResult) -> NetworkOperationBlock {
+    func createGETOperation(url: URL, operationResult result: @escaping NetworkOperationResult) -> NetworkOperationBlock {
         
         return { result( .successful(Data()) ) }
     }

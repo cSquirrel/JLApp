@@ -49,7 +49,7 @@ public class JohnLewisAPI: NSObject {
         }
         
         let endpointURL = config.createEndpointURL(servicePath: "products/search")
-        let getProductsOp = config.networkProvider.createGETOperation(url: endpointURL, result: result)
+        let getProductsOp = config.networkProvider.createGETOperation(url: endpointURL, operationResult: result)
         config.networkExecutor.execute(operation: getProductsOp)
         
     }
@@ -71,7 +71,7 @@ public class JohnLewisAPI: NSObject {
         }
         
         let endpointURL = config.createEndpointURL(servicePath: "products/\(productId)")
-        let getProductsOp = config.networkProvider.createGETOperation(url: endpointURL, result: result)
+        let getProductsOp = config.networkProvider.createGETOperation(url: endpointURL, operationResult: result)
         config.networkExecutor.execute(operation: getProductsOp)
     }
 }

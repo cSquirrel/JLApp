@@ -15,7 +15,7 @@ class ProductsGridViewController: UICollectionViewController {
     fileprivate var products:[JohnLewisProduct] = []
     fileprivate let defaultQueryString = "dishwashers"
     
-    var selectedProduct:JohnLewisProduct?
+    var selectedProductDetails:JohnLewisProductDetails?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,10 +66,15 @@ extension ProductsGridViewController {
     
     public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
-        // TODO: fetch product details
         let itemIndex = indexPath.item
-        selectedProduct = products[itemIndex]
-        self.performSegue(withIdentifier: "presentProductDetails", sender: self)
+        let selectedProductId = products[itemIndex].productId
+        
+        // TODO: fetch product details
+        let api = appConfiguration.apiAccess
+        api?.getProductDetails(productId: selectedProductId, result: { [unowned self] (productDetails: JohnLewisProductDetails) in
+            self.selectedProductDetails = productDetails
+            self.performSegue(withIdentifier: "presentProductDetails", sender: self)
+        })
         
     }
     
@@ -77,11 +82,11 @@ extension ProductsGridViewController {
         
         guard segue.identifier == "presentProductDetails",
             let productDetails = segue.destination as? ProductDetailsViewController,
-            let product = selectedProduct else {
+            let product = selectedProductDetails else {
             return
         }
         
-        productDetails.selectedProduct = product
+        productDetails.selectedProductDetails = product
         
     }
 }
