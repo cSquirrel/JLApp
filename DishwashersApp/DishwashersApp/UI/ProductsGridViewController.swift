@@ -53,7 +53,7 @@ extension ProductsGridViewController {
         let api = appConfiguration.apiAccess
         api?.getProductsGrid(query: defaultQueryString,
                              searchPageSize: Const.defaultSearchPageSize,
-                             result: {[weak self] (p: [JohnLewisProduct]) in
+                             result: {[weak self] (p: [JohnLewisProduct]?) in
 
             self?.products = p
             DispatchQueue.main.async {
@@ -61,7 +61,21 @@ extension ProductsGridViewController {
                 self?.collectionView?.reloadData()
             }
             
-        })
+        }, error: showApiError)
+    }
+    
+    func showApiError(_ error: Error?) {
+
+        let alert = UIAlertController(title: "Error",
+                                      message: "Something went wrong",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        DispatchQueue.main.async { [unowned self] in
+            self.spinnerView.hide()
+            self.present(alert, animated: true, completion: nil)
+        }
+
     }
 }
 
@@ -104,14 +118,27 @@ extension ProductsGridViewController {
         
         let api = appConfiguration.apiAccess
         spinnerView.show(inView: self.view)
-        api?.getProductDetails(productId: selectedProductId, result: { [unowned self] (productDetails: JohnLewisProductDetails) in
+        api?.getProductDetails(productId: selectedProductId, result: { [unowned self] (productDetails: JohnLewisProductDetails?) in
+            
             self.selectedProductDetails = productDetails
             DispatchQueue.main.async {
+                
                 self.spinnerView.hide()
                 self.performSegue(withIdentifier: "presentProductDetails", sender: self)
             }
-        })
+        }, error: showApiError)
         
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        guard
+            identifier == "presentProductDetails",
+            selectedProductDetails != nil else {
+            return false
+        }
+        
+        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -30,12 +30,27 @@ class DefaultServicesProvider: NetworkServicesProvider {
             let dataTask = session.dataTask(with: url, completionHandler: {
                 (responseData: Data?, urlResponse: URLResponse?, responseError: Error?) in
                 
-                if let rData = responseData {
-                    self.jsonCache?.setObject(rData as NSData, forKey: url as NSURL)
-                    DispatchQueue.global(qos:.default).async {result( .successful(rData) )}
-                } else {
-                    DispatchQueue.global(qos:.default).async { result( .failed(responseError) )}
+                guard let httpUrlResponse = urlResponse as? HTTPURLResponse else {
+                    DispatchQueue.global(qos:.default).async { result( .failed(responseError)) }
+                    return
                 }
+                
+                guard let rData = responseData else {
+                    DispatchQueue.global(qos:.default).async { result( .failed(responseError)) }
+                    return
+                }
+                
+                let resultBlock: () -> ()
+                let statusCode = httpUrlResponse.statusCode
+                switch statusCode {
+                    case 200 ... 299:
+                        self.jsonCache?.setObject(rData as NSData, forKey: url as NSURL)
+                        resultBlock = {result( .successful(rData) )}
+                    default:
+                        resultBlock = {result( .failed(responseError) )}
+                }
+                
+                DispatchQueue.global(qos:.default).async( execute: resultBlock )
                 
             })
             dataTask.resume()
