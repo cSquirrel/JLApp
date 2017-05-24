@@ -101,6 +101,7 @@ extension ProductsGridViewController {
         }
         
         productDetails.selectedProductDetails = product
+        productDetails.imagesProvider = appConfiguration.imagesProvider
         
     }
 }

@@ -10,7 +10,22 @@ import UIKit
 
 @IBDesignable class ProductPhotosCarousel: DesignableView {
 
-    func loadImages(_ productImages: [URL], withImagesProvider: ImagesProvider) {
-        // TODO: Load and display images with help of image provider
+    @IBOutlet weak var productImageView: UIImageView!
+    
+    func loadImages(_ productImages: [URL], withImagesProvider imageProvider: ImagesProvider) {
+        
+        guard let firstImageURL = productImages.first else {
+            return
+        }
+        
+        imageProvider(firstImageURL) { (productImage: UIImage?) in
+            
+            guard let img = productImage else {
+                return
+            }
+            DispatchQueue.main.async { [unowned self] in
+                self.productImageView.image = img
+            }
+        }
     }
 }
