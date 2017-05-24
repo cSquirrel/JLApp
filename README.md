@@ -2,9 +2,9 @@
 # Status
 # Design and development decisions
 * network layer is made of [service provider](https://github.com/cSquirrel/JLApp/blob/master/DishwashersApp/DishwashersApp/Networking/NetworkServicesProvider.swift) and [operations executor](https://github.com/cSquirrel/JLApp/blob/master/DishwashersApp/DishwashersApp/Networking/NetworkOperationsExecutor.swift)
- * protocols allowed for mock implementation to be used during testing
- * separation of both allows to implement custom network operations execution strategies if needed
- * [DefaultServicesProvider](https://github.com/cSquirrel/JLApp/blob/master/DishwashersApp/DishwashersApp/Networking/DefaultServicesProvider.swift) implements basics of HTTP communication. Should the server require custom headers or any other customisation a custom provider can be implemented.
+  * protocols allowed for mock implementation to be used during testing
+  * separation of both allows to implement custom network operations execution strategies if needed
+  * [DefaultServicesProvider](https://github.com/cSquirrel/JLApp/blob/master/DishwashersApp/DishwashersApp/Networking/DefaultServicesProvider.swift) implements basics of HTTP communication. Should the server require custom headers or any other customisation a custom provider can be implemented.
 * use of IBDesignable for UI components; this allows for clean Interface Builder work, cleaner UI code and better separation views
 * due to the nature of the app [the model objects](https://github.com/cSquirrel/JLApp/blob/master/DishwashersApp/DishwashersApp/API/JohnLewisModel.swift) are close to API hence they contain code for creating them from JSON. Would the model be internal to the app I would extract this code to JohnLewisModelBuilder to keep the model JSON agnostic.
 * Since prices are used for nothing but displaying in UI they are kept as strings. I the future, when improving the app, it would be worth to have a designated "Price" model object and "PriceFormatter" class which would format the price according to the value and currency code
@@ -14,10 +14,7 @@
 * basic network error handling
 * no advanced network operations queueing
 * in-memory data caching; can be improved by using filesystem and if ETag header would be sent by server
-* product details page status
- * is at bare minimum
- * photos carousel is not implemented due to limited time
-
+* on product details page status the UI is at bare minimum; photos carousel is not implemented due to limited time
 
 # Released Versions
 
