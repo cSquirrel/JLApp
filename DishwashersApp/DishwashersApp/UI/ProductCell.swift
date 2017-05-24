@@ -27,7 +27,10 @@ extension ProductCell {
             guard let li = loadedImage else {
                 return
             }
-            self?.image.image = li
+            DispatchQueue.main.async {
+                self?.image.image = li
+            }
+            
         })
         image.image = UIImage(named: "image_placeholder")
         productDescription.text = product.title

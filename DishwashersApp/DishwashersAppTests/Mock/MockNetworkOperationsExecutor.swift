@@ -11,7 +11,7 @@ import UIKit
 
 class MockNetworkOperationsExecutor: NetworkOperationsExecutor {
 
-    func execute(operation: NetworkOperationBlock) {
-        operation()
+    func execute(operation: @escaping NetworkOperationBlock) {
+        operation(URLSession())
     }
 }

@@ -10,18 +10,27 @@ import UIKit
 
 public protocol NetworkOperationsExecutor {
     
-    func execute(operation: NetworkOperationBlock)
+    func execute(operation: @escaping NetworkOperationBlock)
     
 }
 
-public func CreateHttpExecutor() -> NetworkOperationsExecutor {
-    return HTTPNetworkOperationsExecutor()
+public func CreateHttpExecutor(configuration: URLSessionConfiguration) -> NetworkOperationsExecutor {
+    return HTTPNetworkOperationsExecutor(configuration: configuration)
 }
 
 fileprivate class HTTPNetworkOperationsExecutor: NetworkOperationsExecutor {
 
-    public func execute(operation: NetworkOperationBlock) {
-        operation()
+    let session: URLSession
+    
+    init(configuration: URLSessionConfiguration) {
+        
+        session = URLSession(configuration: configuration, delegate: nil, delegateQueue: OperationQueue.main)
+    }
+    
+    public func execute(operation: @escaping NetworkOperationBlock) {
+        
+        DispatchQueue.main.async { [unowned self] in operation(self.session) }
+        
     }
     
 }

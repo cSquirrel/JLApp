@@ -14,19 +14,9 @@ import UIKit
     @IBOutlet weak var productInfoView: ProductInfoView!
     @IBOutlet weak var productInfoLabel: UILabel!
 
-    var imageProvider:ImagesProvider?
-    var selectedProductDetails: JohnLewisProductDetails? {
-        didSet {
-            guard let details = selectedProductDetails else {
-                return
-            }
-            updateView(productDetails: details)
-        }
-    }
-    
-    private func updateView(productDetails: JohnLewisProductDetails) {
+    func updateView(productDetails: JohnLewisProductDetails, imagesProvider:ImagesProvider?) {
         
-        if let imgProvider = imageProvider {
+        if let imgProvider = imagesProvider {
             let productImages = productDetails.imageURLs
             photosCarousel.loadImages(productImages, withImagesProvider:imgProvider)
         }

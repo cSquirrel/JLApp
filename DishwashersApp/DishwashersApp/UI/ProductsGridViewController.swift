@@ -10,6 +10,12 @@ import UIKit
 
 class ProductsGridViewController: UICollectionViewController {
 
+    enum Const {
+        
+        // Number of items returned in one page of search results
+        static let defaultSearchPageSize = 20
+    }
+    
     @IBOutlet var appConfiguration: ApplicationConfiguration!
     
     fileprivate var products:[JohnLewisProduct] = []
@@ -36,10 +42,15 @@ extension ProductsGridViewController {
         
         // TODO: Display spinner
         let api = appConfiguration.apiAccess
-        api?.getProductsGrid(query: defaultQueryString, result: {[weak self] (p: [JohnLewisProduct]) in
+        api?.getProductsGrid(query: defaultQueryString,
+                             searchPageSize: Const.defaultSearchPageSize,
+                             result: {[weak self] (p: [JohnLewisProduct]) in
             // TODO: Dismiss spinner
             self?.products = p
-            self?.collectionView?.reloadData()
+            DispatchQueue.main.async {
+                self?.collectionView?.reloadData()
+            }
+            
         })
     }
 }
@@ -73,7 +84,10 @@ extension ProductsGridViewController {
         let api = appConfiguration.apiAccess
         api?.getProductDetails(productId: selectedProductId, result: { [unowned self] (productDetails: JohnLewisProductDetails) in
             self.selectedProductDetails = productDetails
-            self.performSegue(withIdentifier: "presentProductDetails", sender: self)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "presentProductDetails", sender: self)
+            }
+            
         })
         
     }
@@ -87,6 +101,7 @@ extension ProductsGridViewController {
         }
         
         productDetails.selectedProductDetails = product
+        productDetails.imagesProvider = appConfiguration.imagesProvider
         
     }
 }

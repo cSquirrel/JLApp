@@ -11,6 +11,7 @@ import UIKit
 class ProductDetailsViewController: UIViewController {
 
     var selectedProductDetails: JohnLewisProductDetails!
+    var imagesProvider:ImagesProvider?
     
     @IBOutlet weak var productDetailsView: ProductDetailsView!
     
@@ -18,7 +19,7 @@ class ProductDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = selectedProductDetails.title
-        productDetailsView.selectedProductDetails = selectedProductDetails
+        productDetailsView.updateView(productDetails: selectedProductDetails, imagesProvider: imagesProvider)
     }
 
 

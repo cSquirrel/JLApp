@@ -16,7 +16,7 @@ import UIKit
 typealias ImagesProvider = (_ url: URL, _ completion: @escaping (UIImage?) -> Void) -> ()
 
 class ApplicationConfiguration: NSObject {
-
+    
     private(set) var apiAccess: JohnLewisAPI!
     private(set) var imagesProvider: ImagesProvider!
     
@@ -26,15 +26,14 @@ class ApplicationConfiguration: NSObject {
     
     fileprivate func createApiAccess() {
         
-        let networkProvider = MockDataServicesProvider()
-        let networkExecutor = CreateHttpExecutor()
+        let networkProvider = JSONServicesProvider()
+        let networkExecutor = CreateHttpExecutor(configuration: .default)
         let baseURL = URL(string:"https://api.johnlewis.com/v1")!
         let apiKey = "Wu1Xqn3vNrd1p7hqkvB6hEu0G9OrsYGb"
         let apiConfig = JohnLewisAPIConfig(networkProvider: networkProvider,
                                            networkExecutor: networkExecutor,
                                            baseURL: baseURL,
-                                           apiKey:
-            apiKey)
+                                           apiKey: apiKey)
         apiAccess = JohnLewisAPI(apiConfig)
         
         imagesProvider = { (url: URL, completion: @escaping (UIImage?) -> Void) -> () in
@@ -59,15 +58,15 @@ fileprivate class MockDataServicesProvider: NetworkServicesProvider {
         
         let result:NetworkOperationBlock
         if url.path.hasSuffix("products/search") {
-            result = { operationResult( .successful(MockDataServicesProvider.mockJsonString.data(using: .utf8)!) ) }
+            result = { _ in operationResult( .successful(MockDataServicesProvider.mockJsonString.data(using: .utf8)!) ) }
         } else {
-            result = { operationResult( .successful(MockDataServicesProvider.mockProductDetailsJsonString.data(using: .utf8)!) ) }
+            result = { _ in operationResult( .successful(MockDataServicesProvider.mockProductDetailsJsonString.data(using: .utf8)!) ) }
         }
         
         return result
     }
     
     func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) -> NetworkOperationBlock {
-        return { completion(UIImage(named:"image_placeholder"))}
+        return { _ in completion(UIImage(named:"image_placeholder"))}
     }
 }
