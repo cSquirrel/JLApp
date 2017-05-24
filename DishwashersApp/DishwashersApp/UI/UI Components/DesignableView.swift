@@ -21,7 +21,7 @@ class DesignableView: UIView {
         setupView()
     }
     
-    private func setupView() {
+    func setupView() {
         
         let selfType = type(of:self)
         let bundle = Bundle(for: selfType)

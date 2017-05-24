@@ -25,7 +25,12 @@ public class DefaultNetworkOperationsExecutor: NetworkOperationsExecutor {
     
     public func execute(operation: @escaping NetworkOperationBlock) {
         
-        DispatchQueue.main.async { [unowned self] in operation(self.session) }
+        DispatchQueue.main.async { [weak self] in
+            guard let s = self else {
+                return
+            }
+            operation(s.session)
+        }
         
     }
     

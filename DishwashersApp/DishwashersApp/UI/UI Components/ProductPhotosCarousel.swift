@@ -27,9 +27,9 @@ extension ProductPhotosCarousel {
             guard let img = productImage else {
                 return
             }
-            DispatchQueue.main.async { [unowned self] in
+            DispatchQueue.main.async { [weak self] in
                 // Use the method from extension to reduce memory footprint
-                self.productImageView.setImage(img)
+                self?.productImageView.setImage(img)
             }
         }
     }
