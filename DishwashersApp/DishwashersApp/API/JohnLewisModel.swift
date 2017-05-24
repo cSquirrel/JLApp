@@ -8,6 +8,21 @@
 
 import UIKit
 
+fileprivate func ReadSafeJSONUrl(string: String) -> URL? {
+    
+    let result: URL?
+    
+    let safeURLString: String
+    if(!string.hasPrefix("http")) {
+        safeURLString = "http:\(string)"
+    } else {
+        safeURLString = string
+    }
+    
+    result = URL(string: safeURLString)
+    return result
+}
+
 public struct JohnLewisProduct {
     
     // This is the product id that should be used to retrieve the product
@@ -41,7 +56,7 @@ public struct JohnLewisProductDetails {
     let productInformation: String
     
     // When data is present here, this is shown on the product page under the price
-    let displaySpecialOffer: String
+    let displaySpecialOffer: String?
     
     // Guarantee information
     //additionalServices -> includedServices
@@ -93,7 +108,7 @@ extension JohnLewisProduct {
             let price = priceData[JsonKey.priceNow] as? String,
             let title = json[JsonKey.title] as? String,
             let imageURLString = json[JsonKey.imageURL] as? String,
-            let imageURL = URL(string: imageURLString) else {
+            let imageURL = ReadSafeJSONUrl(string: imageURLString) else {
                 return nil
         }
         
@@ -143,7 +158,7 @@ extension JohnLewisProductDetails {
     enum JsonKey {
         static let title = "title"
         static let media = "media"
-        static let image = "images"
+        static let images = "images"
         static let urls = "urls"
         static let price = "price"
         static let priceNow = "now"
@@ -161,23 +176,63 @@ extension JohnLewisProductDetails {
     
     public static func createProduct(fromJson json: [String:Any]) -> JohnLewisProductDetails? {
         
-//        guard let productId = json[JsonKey.productId] as? String,
-//            let priceData = json[JsonKey.price] as? [String:Any],
-//            let price = priceData[JsonKey.priceNow] as? String,
-//            let title = json[JsonKey.title] as? String,
-//            let imageURLString = json[JsonKey.imageURL] as? String,
-//            let imageURL = URL(string: imageURLString) else {
-//                return nil
-//        }
+        guard
+            let priceData = json[JsonKey.price] as? [String:Any],
+            let price = priceData[JsonKey.priceNow] as? String,
+            let title = json[JsonKey.title] as? String,
+            let detailsData = json[JsonKey.details] as? [String:Any],
+            let productInformation = detailsData[JsonKey.productInformation] as? String,
+            let code = json[JsonKey.code] as? String  else {
+                return nil
+        }
         
-        let result = JohnLewisProductDetails(title: "",
-                                             imageURLs: [],
-                                             price: "",
-                                             productInformation: "",
-                                             displaySpecialOffer: "",
-                                             includedServices: [""],
-                                             code: "",
-                                             features: [])
+        let displaySpecialOffer = json[JsonKey.displaySpecialOffer] as? String
+        
+        let imageURLs:[URL]
+        if let media = json[JsonKey.media] as? [String:Any],
+            let images = media[JsonKey.images] as? [String: Any],
+            let imageURLStrings = images[JsonKey.urls] as? [String] {
+            
+            imageURLs = imageURLStrings.flatMap {ReadSafeJSONUrl(string: $0)}
+            
+        } else {
+            imageURLs = []
+        }
+        
+        let includedServices:[String]
+        if let additionalServices = json[JsonKey.additionalServices] as? [String:Any],
+            let services = additionalServices[JsonKey.includedServices] as? [String] {
+            includedServices = services
+        } else {
+            includedServices = []
+        }
+        
+        let features:[Feature]
+        if let feats = json[JsonKey.features] as? [[String:Any]],
+            feats.count > 0,
+            let attributes = feats[0][JsonKey.attributes] as? [[String : Any]] {
+                
+            features = attributes.flatMap({ (element: [String : Any]) -> Feature? in
+                guard
+                    let name = element[JsonKey.name] as? String,
+                    let value = element[JsonKey.value] as? String else {
+                        return nil
+                }
+                let result = Feature(name: name, value: value)
+                return result
+            })
+        } else {
+            features = []
+        }
+        
+        let result = JohnLewisProductDetails(title: title,
+                                             imageURLs: imageURLs,
+                                             price: price,
+                                             productInformation: productInformation,
+                                             displaySpecialOffer: displaySpecialOffer,
+                                             includedServices: includedServices,
+                                             code: code,
+                                             features: features)
         return result
     }
     

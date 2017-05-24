@@ -154,6 +154,21 @@ class JohnLewisProductTests: XCTestCase {
         XCTAssertEqual(result.count, 20)
         
     }
+    
+    func testParseMultipleProductsFromServer_ImageURL() {
+        
+        // prepare
+        let jsonData = TestUtils.loadJSONData(fileName: "products_from_server")!
+        
+        // execute
+        let result = JohnLewisProduct.parse(productsAsJsonData: jsonData)
+        
+        // verify
+        XCTAssertNotNil(result)
+        let imageURL:URL = result[0].imageURL
+        XCTAssertNotNil(imageURL.scheme)
+        
+    }
 
 }
 
@@ -264,6 +279,22 @@ class JohnLewisProductDetailsTests: XCTestCase {
         
         // verify
         XCTAssertNotNil(result)
+        
+    }
+    
+    func testParseProductFromServer_ImageURL() {
+        
+        // prepare
+        let jsonData = TestUtils.loadJSONData(fileName: "product_details_from_server")!
+        
+        // execute
+        let result = JohnLewisProductDetails.parse(productsAsJsonData: jsonData)
+        
+        // verify
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result?.imageURLs.count, 6)
+        let imageURL:URL = (result?.imageURLs[0])!
+        XCTAssertNotNil(imageURL.scheme)
         
     }
 }
