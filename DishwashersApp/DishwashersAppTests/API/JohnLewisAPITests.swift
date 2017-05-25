@@ -88,9 +88,10 @@ class JohnLewisAPITests: XCTestCase {
             returnedProducts = prods
             shouldReturnProducts.fulfill()
         }
+        let error:JohnLewisAPI.ApiError = { (error: Error?) in }
         
         // execute
-        api.getProductsGrid(query: "mock_query", searchPageSize: 20, result:result)
+        api.getProductsGrid(query: "mock_query", searchPageSize: 20, result:result, error: error)
         wait(for: [shouldReturnProducts], timeout: 2)
         
         // verify
@@ -107,9 +108,10 @@ class JohnLewisAPITests: XCTestCase {
         let result:JohnLewisAPI.GetProductsGridResult = {(prods: [JohnLewisProduct]) in
             shouldReturnProducts.fulfill()
         }
+        let error:JohnLewisAPI.ApiError = { (error: Error?) in }
         
         // execute
-        api.getProductsGrid(query: "mock_query", searchPageSize: 20, result:result)
+        api.getProductsGrid(query: "mock_query", searchPageSize: 20, result:result, error:error)
         wait(for: [shouldReturnProducts], timeout: 2)
         
         // verify
@@ -141,9 +143,10 @@ class JohnLewisAPITests: XCTestCase {
             returnedProduct = prod
             shouldReturnProductDetails.fulfill()
         }
+        let error:JohnLewisAPI.ApiError = { (error: Error?) in }
         
         // execute
-        api.getProductDetails(productId: productId, result: result)
+        api.getProductDetails(productId: productId, result: result, error: error)
         wait(for: [shouldReturnProductDetails], timeout: 2)
         
         // verify
@@ -161,9 +164,10 @@ class JohnLewisAPITests: XCTestCase {
         let result:JohnLewisAPI.GetProductDetailsResult = {(prod: JohnLewisProductDetails) in
             shouldReturnProductDetails.fulfill()
         }
+        let error:JohnLewisAPI.ApiError = { (error: Error?) in }
         
         // execute
-        api.getProductDetails(productId: productId, result: result)
+        api.getProductDetails(productId: productId, result: result, error: error)
         wait(for: [shouldReturnProductDetails], timeout: 2)
         
         // verify
