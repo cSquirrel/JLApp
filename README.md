@@ -18,6 +18,10 @@
 
 # Released Versions
 
+## [Version 0.3.1](https://github.com/cSquirrel/JLApp/releases/tag/0.3.1)
+Hotfix:
+* added unmerged commit
+
 ## [Version 0.3](https://github.com/cSquirrel/JLApp/releases/tag/0.3)
 Maintenance:
 * Added loading spinner to provide UI feedback when connecting to API
