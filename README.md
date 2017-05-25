@@ -18,6 +18,11 @@
 
 # Released Versions
 
+## [Version 0.3.2](https://github.com/cSquirrel/JLApp/releases/tag/0.3.2)
+Bugfixes and improvements:
+* Xcode scheme is shared now. UI autmation tests are excluded
+* scale and display images preserving aspect ratio
+
 ## [Version 0.3.1](https://github.com/cSquirrel/JLApp/releases/tag/0.3.1)
 Hotfix:
 * added unmerged commit
